@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>맑음 (Malgeum) — 한국의 감각으로 만든 키보드 스위치</title>
+  <meta name="description"
+    content="맑음(Malgeum)은 한국의 미감과 장인 정신으로 탄생한 키보드 스위치 브랜드입니다. 김치축과 한복축, 두 가지 감성으로 당신의 타이핑을 완성합니다." />
+  <meta property="og:title" content="맑음 (Malgeum) — 한국의 감각으로 만든 키보드 스위치" />
+  <meta property="og:description" content="김치축과 한복축. 한국의 미감이 담긴 프리미엄 키보드 스위치." />
+  <meta property="og:type" content="website" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Nanum+Myeongjo:wght@400;700;800&family=Montserrat:wght@300;400;500&family=Noto+Sans+KR:wght@300;400;500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- Skip Link -->
+  <a href="#main-content" class="skip-link">본문으로 바로가기</a>
+
+  <!-- Cursor -->
+  <div class="cursor" id="cursor" aria-hidden="true"></div>
+  <div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+
+  <!-- Grain Overlay -->
+  <div class="grain-overlay" aria-hidden="true"></div>
+
+  <!-- ===== NAV ===== -->
+  <header class="navbar" id="navbar" role="banner">
+    <nav class="nav-inner" aria-label="주 내비게이션">
+      <a href="#hero" class="nav-logo" id="nav-logo-link" aria-label="맑음 홈으로 이동">
+        <span class="logo-kr">맑음</span>
+        <span class="logo-en">Malgeum</span>
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="#about" class="nav-link" id="nav-about">브랜드</a></li>
+        <li><a href="#kimchi" class="nav-link" id="nav-kimchi">김치축</a></li>
+        <li><a href="#hanbok" class="nav-link" id="nav-hanbok">한복축</a></li>
+        <li><a href="#contact" class="nav-link nav-link--cta" id="nav-contact">사전 등록</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="메뉴 열기" aria-expanded="false" aria-controls="mobileMenu">
+        <span class="burger-bar"></span>
+        <span class="burger-bar"></span>
+        <span class="burger-bar"></span>
+      </button>
+    </nav>
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="모바일 메뉴" aria-hidden="true">
+      <ul role="list">
+        <li><a href="#about" class="mobile-link" id="m-nav-about">브랜드</a></li>
+        <li><a href="#kimchi" class="mobile-link" id="m-nav-kimchi">김치축</a></li>
+        <li><a href="#hanbok" class="mobile-link" id="m-nav-hanbok">한복축</a></li>
+        <li><a href="#contact" class="mobile-link mobile-link--cta" id="m-nav-contact">사전 등록</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="hero" aria-label="히어로 섹션">
+      <div class="hero-bg" aria-hidden="true">
+        <div class="hero-pattern"></div>
+        <div class="hero-glow hero-glow--red" aria-hidden="true"></div>
+        <div class="hero-glow hero-glow--teal" aria-hidden="true"></div>
+      </div>
+
+      <div class="hero-content">
+        <p class="hero-eyebrow" data-reveal>한국의 감각</p>
+        <h1 class="hero-title" data-reveal data-reveal-delay="1">
+          <span class="hero-title-kr">맑음</span>
+          <span class="hero-title-en">Malgeum</span>
+        </h1>
+        <p class="hero-subtitle" data-reveal data-reveal-delay="2">
+          한국의 미감과 장인 정신으로 빚은<br />
+          키보드 스위치의 새로운 경험
+        </p>
+        <div class="hero-actions" data-reveal data-reveal-delay="3">
+          <a href="#kimchi" class="btn btn--red" id="hero-kimchi-btn">
+            김치축 보기
+            <span class="btn-arrow" aria-hidden="true">→</span>
+          </a>
+          <a href="#hanbok" class="btn btn--teal" id="hero-hanbok-btn">
+            한복축 보기
+            <span class="btn-arrow" aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+
+
+
+      <div class="hero-scroll-indicator" aria-hidden="true">
+        <span class="scroll-text">스크롤</span>
+        <div class="scroll-line"></div>
+      </div>
+    </section>
+
+    <!-- ===== ABOUT ===== -->
+    <section class="about" id="about" aria-labelledby="about-title">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-text">
+            <p class="section-eyebrow" data-scroll-reveal>브랜드 스토리</p>
+            <h2 class="section-title" id="about-title" data-scroll-reveal>
+              맑고 깨끗한<br />
+              타이핑의 순간
+            </h2>
+            <p class="about-desc" data-scroll-reveal>
+              맑음(Malgeum)은 한국어 '맑다'에서 태어났습니다.
+              맑은 소리, 맑은 느낌, 맑은 울림—우리는 키보드 스위치에
+              한국 고유의 미감을 담고자 합니다.
+            </p>
+            <p class="about-desc" data-scroll-reveal>
+              단청의 붉음과 한복의 고요함에서 영감을 얻어, 두 가지 감성으로
+              타이퍼의 손끝과 귀를 만족시킬 스위치를 기획하고 있습니다.
+            </p>
+            <div class="about-values" data-scroll-reveal>
+              <div class="value-item">
+                <div class="value-icon" aria-hidden="true">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"
+                      stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="value-title">한국 미감</h3>
+                  <p class="value-desc">전통에서 길어 올린 현대적 감성</p>
+                </div>
+              </div>
+              <div class="value-item">
+                <div class="value-icon" aria-hidden="true">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                      stroke="currentColor" stroke-width="1.5" />
+                    <path d="M12 6V12L16 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="value-title">장인 정신</h3>
+                  <p class="value-desc">타협 없는 품질과 세밀한 조율</p>
+                </div>
+              </div>
+              <div class="value-item">
+                <div class="value-icon" aria-hidden="true">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9 18.75L3.75 12L9 5.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                    <path d="M15 5.25L20.25 12L15 18.75" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="value-title">감각적 타이핑</h3>
+                  <p class="value-desc">소리와 촉감으로 완성되는 경험</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="about-visual" data-scroll-reveal>
+            <div class="about-card" aria-label="브랜드 비주얼">
+              <div class="about-card-inner">
+                <div class="dancheong-pattern" aria-hidden="true">
+                  <div class="dp-circle dp-circle--1"></div>
+                  <div class="dp-circle dp-circle--2"></div>
+                  <div class="dp-circle dp-circle--3"></div>
+                </div>
+                <p class="about-card-quote" lang="ko">
+                  "손끝에 닿는 한국의<br />
+                  맑은 감각"
+                </p>
+                <p class="about-card-sub">淸音 · 清感 · 맑음</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== KIMCHI SECTION ===== -->
+    <section class="switch-section switch-section--kimchi" id="kimchi" aria-labelledby="kimchi-title">
+      <div class="switch-bg" aria-hidden="true">
+        <div class="switch-glow switch-glow--kimchi"></div>
+      </div>
+      <div class="container">
+        <div class="switch-editorial-grid">
+          <div class="switch-text-primary" data-scroll-reveal>
+            <p class="section-eyebrow section-eyebrow--red">01 · 김치축</p>
+            <h2 class="section-title" id="kimchi-title">
+              대담하게,<br />
+              <em>살아있는 클릭</em>
+            </h2>
+            <p class="switch-desc">
+              김치처럼 강렬하고 중독성 있는 클리키 스위치.<br />
+              청축의 찰진 피드백과 선명한 클릭음으로 타이핑의 리듬감을<br />
+              극대화합니다. 한 번 누르면 멈출 수 없는 감각—그것이 김치축입니다.
+            </p>
+            <div class="btn-group">
+              <a href="#contact" class="btn btn--red btn--outline" id="kimchi-notify-btn">
+                출시 알림 받기
+                <span class="btn-arrow" aria-hidden="true">→</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="switch-specs-secondary" data-scroll-reveal>
+            <div class="specs-header">
+              <h3 class="specs-title">Technical Specs</h3>
+              <div class="specs-line"></div>
+            </div>
+            <div class="switch-features">
+              <div class="feature-row">
+                <div class="feature-label">타입</div>
+                <div class="feature-value">Clicky · 클리키</div>
+              </div>
+              <div class="feature-row">
+                <div class="feature-label">촉감</div>
+                <div class="feature-value">청축 계열, 강한 피드백</div>
+              </div>
+              <div class="feature-row">
+                <div class="feature-label">소리</div>
+                <div class="feature-value">선명한 클릭음</div>
+              </div>
+              <div class="feature-row">
+                <div class="feature-label">컬러</div>
+                <div class="feature-value">단청 크림슨 (丹靑赤)</div>
+              </div>
+              <div class="feature-row">
+                <div class="feature-label">상태</div>
+                <div class="feature-value feature-value--badge">기획 중</div>
+              </div>
+            </div>
+
+            <div class="switch-vibe" aria-label="김치축의 감성">
+              <div class="vibe-bar">
+                <span class="vibe-label">클릭감</span>
+                <div class="vibe-track" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"
+                  aria-label="클릭감 95%">
+                  <div class="vibe-fill vibe-fill--red" style="--pct: 95%"></div>
+                </div>
+                <span class="vibe-num">95</span>
+              </div>
+              <div class="vibe-bar">
+                <span class="vibe-label">소음</span>
+                <div class="vibe-track" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"
+                  aria-label="소음 85%">
+                  <div class="vibe-fill vibe-fill--red" style="--pct: 85%"></div>
+                </div>
+                <span class="vibe-num">85</span>
+              </div>
+              <div class="vibe-bar">
+                <span class="vibe-label">중독성</span>
+                <div class="vibe-track" role="progressbar" aria-valuenow="99" aria-valuemin="0" aria-valuemax="100"
+                  aria-label="중독성 99%">
+                  <div class="vibe-fill vibe-fill--red" style="--pct: 99%"></div>
+                </div>
+                <span class="vibe-num">99</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== HANBOK SECTION ===== -->
+    <section class="switch-section switch-section--hanbok" id="hanbok" aria-labelledby="hanbok-title">
+      <div class="switch-bg" aria-hidden="true">
+        <div class="switch-glow switch-glow--hanbok"></div>
+      </div>
+      <div class="container">
+        <div class="switch-editorial-grid switch-editorial-grid--reverse">
+          <div class="switch-text-primary" data-scroll-reveal>
+            <p class="section-eyebrow section-eyebrow--teal">02 · 한복축</p>
+            <h2 class="section-title" id="hanbok-title">
+              고요하게,<br />
+              <em>흐르는 침묵</em>
+            </h2>
+            <p class="switch-desc">
+              한복의 우아한 선처럼 조용하고 깊은 무소음·저소음 스위치.<br />
+              소리 없이도 충분한 만족감을 주는 부드러운 촉감으로,<br />
+              깊은 밤 집중이 필요한 순간을 함께합니다.
+            </p>
+            <div class="btn-group">
+              <a href="#contact" class="btn btn--teal btn--outline" id="hanbok-notify-btn">
+                출시 알림 받기
+                <span class="btn-arrow" aria-hidden="true">→</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="switch-specs-secondary" data-scroll-reveal>
+            <div class="specs-header">
+              <h3 class="specs-title">Technical Specs</h3>
+              <div class="specs-line"></div>
+            </div>
+            <div class="switch-features">
+              <div class="feature-row">
+                <div class="feature-label">타입</div>
+                <div class="feature-value">Silent Linear · 무소음 리니어</div>
+              </div>
+              <div class="feature-row">
+                <div class="feature-label">촉감</div>
+                <div class="feature-value">부드럽고 일관된 리니어</div>
+              </div>
+              <div class="feature-row">
+                <div class="feature-label">소리</div>
+                <div class="feature-value">무소음 / 저소음</div>
+              </div>
+              <div class="feature-row">
+                <div class="feature-label">컬러</div>
+                <div class="feature-value">청자 세이지 (靑瓷色)</div>
+              </div>
+              <div class="feature-row">
+                <div class="feature-label">상태</div>
+                <div class="feature-value feature-value--badge">기획 중</div>
+              </div>
+            </div>
+
+            <div class="switch-vibe" aria-label="한복축의 감성">
+              <div class="vibe-bar">
+                <span class="vibe-label">부드러움</span>
+                <div class="vibe-track" role="progressbar" aria-valuenow="97" aria-valuemin="0" aria-valuemax="100"
+                  aria-label="부드러움 97%">
+                  <div class="vibe-fill vibe-fill--teal" style="--pct: 97%"></div>
+                </div>
+                <span class="vibe-num">97</span>
+              </div>
+              <div class="vibe-bar">
+                <span class="vibe-label">정숙성</span>
+                <div class="vibe-track" role="progressbar" aria-valuenow="96" aria-valuemin="0" aria-valuemax="100"
+                  aria-label="정숙성 96%">
+                  <div class="vibe-fill vibe-fill--teal" style="--pct: 96%"></div>
+                </div>
+                <span class="vibe-num">96</span>
+              </div>
+              <div class="vibe-bar">
+                <span class="vibe-label">집중력</span>
+                <div class="vibe-track" role="progressbar" aria-valuenow="98" aria-valuemin="0" aria-valuemax="100"
+                  aria-label="집중력 98%">
+                  <div class="vibe-fill vibe-fill--teal" style="--pct: 98%"></div>
+                </div>
+                <span class="vibe-num">98</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== DIVIDER ===== -->
+    <div class="section-divider" aria-hidden="true">
+      <div class="divider-text">맑음 · Malgeum · 맑음 · Malgeum · 맑음 · Malgeum · 맑음 · Malgeum · </div>
+    </div>
+
+    <!-- ===== CONTACT ===== -->
+    <section class="contact" id="contact" aria-labelledby="contact-title">
+      <div class="container">
+        <div class="contact-inner">
+          <p class="section-eyebrow" data-scroll-reveal>사전 등록</p>
+          <h2 class="section-title contact-title" id="contact-title" data-scroll-reveal>
+            맑음의 첫 번째<br />
+            소식을 받아보세요
+          </h2>
+          <p class="contact-desc" data-scroll-reveal>
+            김치축과 한복축의 출시 소식, 프리오더 정보를 가장 먼저 전달해 드립니다.
+          </p>
+
+          <form class="contact-form" id="contactForm" data-scroll-reveal novalidate aria-label="사전 등록 폼">
+            <div class="form-group">
+              <label for="email-input" class="form-label">이메일 주소 <span class="required"
+                  aria-hidden="true">*</span></label>
+              <div class="form-input-wrap">
+                <input type="email" id="email-input" name="email" class="form-input" placeholder="your@email.com"
+                  required autocomplete="email" aria-required="true" aria-describedby="email-error" />
+                <div class="form-input-icon" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                    <polyline points="22,6 12,13 2,6" />
+                  </svg>
+                </div>
+              </div>
+              <span class="form-error" id="email-error" role="alert" aria-live="polite"></span>
+            </div>
+
+            <div class="form-group">
+              <fieldset class="switch-interest">
+                <legend class="form-label">관심 있는 스위치</legend>
+                <div class="radio-group">
+                  <label class="radio-label" for="interest-kimchi">
+                    <input type="radio" id="interest-kimchi" name="interest" value="kimchi" class="radio-input" />
+                    <span class="radio-custom radio-custom--red" aria-hidden="true"></span>
+                    <span>김치축</span>
+                  </label>
+                  <label class="radio-label" for="interest-hanbok">
+                    <input type="radio" id="interest-hanbok" name="interest" value="hanbok" class="radio-input" />
+                    <span class="radio-custom radio-custom--teal" aria-hidden="true"></span>
+                    <span>한복축</span>
+                  </label>
+                  <label class="radio-label" for="interest-both">
+                    <input type="radio" id="interest-both" name="interest" value="both" class="radio-input" checked />
+                    <span class="radio-custom radio-custom--gold" aria-hidden="true"></span>
+                    <span>둘 다</span>
+                  </label>
+                </div>
+              </fieldset>
+            </div>
+
+            <button type="submit" class="btn btn--submit" id="submit-btn" aria-describedby="submit-feedback">
+              <span class="btn-text">사전 등록하기</span>
+              <span class="btn-loading" aria-hidden="true">등록 중…</span>
+              <span class="btn-arrow" aria-hidden="true">→</span>
+            </button>
+            <p class="form-note" id="submit-feedback">개인정보는 출시 알림 목적으로만 사용됩니다.</p>
+          </form>
+
+          <div class="contact-success" id="contactSuccess" role="status" aria-live="polite" aria-hidden="true">
+            <div class="success-icon" aria-hidden="true">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                <polyline points="22 4 12 14.01 9 11.01" />
+              </svg>
+            </div>
+            <h3 class="success-title">등록 완료!</h3>
+            <p class="success-desc">맑음의 첫 소식을 이메일로 전달드리겠습니다.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <span class="footer-logo-kr">맑음</span>
+          <span class="footer-logo-en">Malgeum</span>
+          <p class="footer-tagline">한국의 감각으로 만든 키보드 스위치</p>
+        </div>
+        <div class="footer-links">
+          <a href="#about" class="footer-link" id="f-about">브랜드</a>
+          <a href="#kimchi" class="footer-link" id="f-kimchi">김치축</a>
+          <a href="#hanbok" class="footer-link" id="f-hanbok">한복축</a>
+          <a href="#contact" class="footer-link" id="f-contact">사전 등록</a>
+        </div>
+        <p class="footer-copy">
+          © 2026 맑음 (Malgeum). All rights reserved.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+
+</html>
