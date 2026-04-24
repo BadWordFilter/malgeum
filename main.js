@@ -96,7 +96,19 @@ contactForm && contactForm.addEventListener('submit', async (e) => {
   emailError.textContent = '';
   submitBtn.classList.add('btn--loading');
   submitBtn.disabled = true;
-  await new Promise(r => setTimeout(r, 1400));
+
+  const selectedInterest = document.querySelector('input[name="interest"]:checked');
+  const interestValue = selectedInterest ? selectedInterest.value : 'both';
+  let interestText = '김치축/한복축(둘 다)';
+  if (interestValue === 'kimchi') interestText = '김치축';
+  if (interestValue === 'hanbok') interestText = '한복축';
+
+  // Make it actually functional via mailto
+  const subject = encodeURIComponent(`[맑음 사전등록] ${interestText} 알림 신청`);
+  const body = encodeURIComponent(`사전 등록을 신청합니다.\n\n이메일: ${email}\n관심 스위치: ${interestText}`);
+  window.location.href = `mailto:contact@hmbg.kr?subject=${subject}&body=${body}`;
+
+  await new Promise(r => setTimeout(r, 800)); // Short delay for better UX
   contactForm.style.display = 'none';
   contactSuccess.style.display = 'block';
   contactSuccess.removeAttribute('aria-hidden');
