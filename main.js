@@ -97,14 +97,21 @@ contactForm && contactForm.addEventListener('submit', async (e) => {
   submitBtn.classList.add('btn--loading');
   submitBtn.disabled = true;
 
-  const selectedInterest = document.querySelector('input[name="interest"]:checked');
-  const interestValue = selectedInterest ? selectedInterest.value : 'both';
-  let interestText = '김치축/한복축(둘 다)';
-  if (interestValue === 'kimchi') interestText = '김치축';
-  if (interestValue === 'hanbok') interestText = '한복축';
+  const selectedInterests = document.querySelectorAll('input[name="interest"]:checked');
+  let interestTexts = [];
+  selectedInterests.forEach(checkbox => {
+    if (checkbox.value === 'jangsanbeom') interestTexts.push('장산범 축');
+    if (checkbox.value === 'omija') interestTexts.push('오미자 축');
+    if (checkbox.value === 'chamoe') interestTexts.push('참외 축');
+    if (checkbox.value === 'hongsi') interestTexts.push('홍시 축');
+    if (checkbox.value === 'hallabong') interestTexts.push('한라봉 축');
+    if (checkbox.value === 'hanbok') interestTexts.push('한복 축');
+  });
+
+  const interestText = interestTexts.length > 0 ? interestTexts.join(', ') : '전체 스위치';
 
   // Make it actually functional via mailto
-  const subject = encodeURIComponent(`[맑음 사전등록] ${interestText} 알림 신청`);
+  const subject = encodeURIComponent(`[맑음 사전등록] 관심 스위치 알림 신청`);
   const body = encodeURIComponent(`사전 등록을 신청합니다.\n\n이메일: ${email}\n관심 스위치: ${interestText}`);
   window.location.href = `mailto:contact@hmbg.kr?subject=${subject}&body=${body}`;
 

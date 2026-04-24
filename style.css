@@ -1,17 +1,23 @@
 /* ===== MALGEUM — 맑음 ===== */
 
 :root {
-  --red: #C0392B;
-  --red-light: #E74C3C;
-  --red-glow: rgba(192, 57, 43, 0.35);
-  --teal: #1A6B5A;
-  --teal-light: #27AE8A;
-  --teal-glow: rgba(26, 107, 90, 0.35);
+  --bg: #000000;
+  --bg-2: #020202;
+  --omija: #8B002B;
+  --omija-light: #FFB6C1;
+  --omija-glow: rgba(139, 0, 43, 0.3);
+  --chamoe: #F9C80E;
+  --chamoe-light: #FFFFFF;
+  --chamoe-glow: rgba(249, 200, 14, 0.3);
+  --hongsi: #E05A3D;
+  --hongsi-light: #FFF5EE;
+  --hongsi-glow: rgba(224, 90, 61, 0.3);
+  --hallabong: #FF8200;
+  --hallabong-light: #32CD32;
+  --hallabong-glow: rgba(255, 130, 0, 0.3);
   --gold: #D4AF37;
-  --bg: #050403;
-  --bg-2: #0A0806;
-  --surface: #12100C;
-  --surface-2: #1A1712;
+  --surface: rgba(255, 255, 255, 0.03);
+  --surface-2: rgba(255, 255, 255, 0.05);
   --border: rgba(255, 255, 255, 0.06);
   --text: #F5EFE0;
   --text-muted: rgba(245, 239, 224, 0.55);
@@ -38,6 +44,7 @@ html {
 }
 
 body {
+  overflow-x: hidden;
   background: var(--bg);
   color: var(--text);
   font-family: var(--font-sans);
@@ -271,12 +278,20 @@ body {
   margin-bottom: 1rem;
 }
 
-.section-eyebrow--red {
-  color: var(--red-light);
+.section-eyebrow--omija {
+  color: var(--omija-light);
 }
 
-.section-eyebrow--teal {
-  color: var(--teal-light);
+.section-eyebrow--chamoe {
+  color: var(--chamoe);
+}
+
+.section-eyebrow--hongsi {
+  color: var(--hongsi);
+}
+
+.section-eyebrow--hallabong {
+  color: var(--hallabong-light);
 }
 
 .section-title {
@@ -321,24 +336,44 @@ body {
   transform: translateY(0) scale(0.97);
 }
 
-.btn--red {
-  background: var(--red);
+.btn--omija {
+  background: var(--omija);
   color: #fff;
-  box-shadow: 0 4px 24px var(--red-glow);
+  box-shadow: 0 4px 24px var(--omija-glow);
 }
 
-.btn--red:hover {
-  box-shadow: 0 8px 32px var(--red-glow);
+.btn--omija:hover {
+  box-shadow: 0 8px 32px var(--omija-glow);
 }
 
-.btn--teal {
-  background: var(--teal);
+.btn--chamoe {
+  background: var(--chamoe);
+  color: #000;
+  box-shadow: 0 4px 24px var(--chamoe-glow);
+}
+
+.btn--chamoe:hover {
+  box-shadow: 0 8px 32px var(--chamoe-glow);
+}
+
+.btn--hongsi {
+  background: var(--hongsi);
   color: #fff;
-  box-shadow: 0 4px 24px var(--teal-glow);
+  box-shadow: 0 4px 24px var(--hongsi-glow);
 }
 
-.btn--teal:hover {
-  box-shadow: 0 8px 32px var(--teal-glow);
+.btn--hongsi:hover {
+  box-shadow: 0 8px 32px var(--hongsi-glow);
+}
+
+.btn--hallabong {
+  background: var(--hallabong);
+  color: #000;
+  box-shadow: 0 4px 24px var(--hallabong-glow);
+}
+
+.btn--hallabong:hover {
+  box-shadow: 0 8px 32px var(--hallabong-glow);
 }
 
 .btn--outline {
@@ -346,12 +381,20 @@ body {
   border: 1px solid currentColor;
 }
 
-.btn--outline.btn--red {
-  color: var(--red-light);
+.btn--outline.btn--omija {
+  color: var(--omija-light);
 }
 
-.btn--outline.btn--teal {
-  color: var(--teal-light);
+.btn--outline.btn--chamoe {
+  color: var(--chamoe);
+}
+
+.btn--outline.btn--hongsi {
+  color: var(--hongsi);
+}
+
+.btn--outline.btn--hallabong {
+  color: var(--hallabong-light);
 }
 
 .btn--submit {
@@ -471,14 +514,14 @@ body {
   pointer-events: none;
 }
 
-.hero-glow--red {
-  background: var(--red-glow);
+.hero-glow--omija {
+  background: var(--omija-glow);
   top: -15%;
   left: -15%;
 }
 
-.hero-glow--teal {
-  background: var(--teal-glow);
+.hero-glow--hallabong {
+  background: var(--hallabong-glow);
   bottom: -15%;
   right: -15%;
 }
@@ -608,7 +651,7 @@ body {
 
 /* ===== ABOUT ===== */
 .about {
-  padding: 8rem 0;
+  padding: 12rem 0;
   background: var(--bg-2);
 }
 
@@ -739,17 +782,17 @@ body {
 
 /* ===== SWITCH SECTIONS ===== */
 .switch-section {
-  padding: 8rem 0;
+  padding: 12rem 0;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
 }
 
-.switch-section--kimchi {
-  background: #0D0B09;
+.switch-section--omija {
+  background: transparent !important;
 }
 
-.switch-section--hanbok {
-  background: var(--bg-2);
+.switch-section--hallabong {
+  background: transparent !important;
 }
 
 .switch-bg {
@@ -759,20 +802,23 @@ body {
 }
 
 .switch-glow {
+  filter: blur(180px);
   position: absolute;
-  width: 50vw;
-  height: 50vw;
+  width: 140vw;
+  height: 140vw;
   border-radius: 50%;
-  filter: blur(120px);
+  opacity: 0.4;
+  pointer-events: none;
+  z-index: 0;
 }
 
-.switch-glow--kimchi {
+.switch-glow--omija {
   background: rgba(192, 57, 43, 0.12);
   top: -10%;
   right: -10%;
 }
 
-.switch-glow--hanbok {
+.switch-glow--hallabong {
   background: rgba(26, 107, 90, 0.12);
   top: -10%;
   left: -10%;
@@ -855,7 +901,7 @@ body {
   display: flex;
   gap: 1.5rem;
   padding: 1.25rem 0;
-  border-bottom: 1px solid var(--border);
+  /* border-bottom removed */
   align-items: baseline;
 }
 
@@ -921,11 +967,11 @@ body {
   transform: scaleX(1);
 }
 
-.vibe-fill--red {
+.vibe-fill--omija {
   background: linear-gradient(90deg, var(--red), var(--red-light));
 }
 
-.vibe-fill--teal {
+.vibe-fill--hallabong {
   background: linear-gradient(90deg, var(--teal), var(--teal-light));
 }
 
@@ -939,10 +985,10 @@ body {
 /* ===== DIVIDER ===== */
 .section-divider {
   overflow: hidden;
-  padding: 1.5rem 0;
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-  background: var(--surface);
+  padding: 8rem 0;
+  background: transparent;
+  position: relative;
+  z-index: 2;
 }
 
 .divider-text {
@@ -953,23 +999,23 @@ body {
   letter-spacing: 0.15em;
   color: var(--text-faint);
   text-transform: uppercase;
-  animation: marquee 18s linear infinite;
+  animation: marquee 30s linear infinite;
 }
 
 @keyframes marquee {
   from {
-    transform: translateX(0)
+    transform: translateX(0);
   }
 
   to {
-    transform: translateX(-50%)
+    transform: translateX(-50%);
   }
 }
 
 /* ===== CONTACT ===== */
 .contact {
-  padding: 8rem 0;
-  background: var(--bg);
+  padding: 12rem 0;
+  background: transparent !important;
 }
 
 .contact-inner {
@@ -1007,7 +1053,19 @@ body {
 }
 
 .required {
-  color: var(--red-light);
+  color: var(--omija-light);
+}
+
+.section-eyebrow--chamoe {
+  color: var(--chamoe);
+}
+
+.section-eyebrow--hongsi {
+  color: var(--hongsi);
+}
+
+.section-eyebrow--hallabong {
+  color: var(--hallabong-light);
   margin-left: 2px;
 }
 
@@ -1050,7 +1108,19 @@ body {
 .form-error {
   display: block;
   font-size: 0.75rem;
-  color: var(--red-light);
+  color: var(--omija-light);
+}
+
+.section-eyebrow--chamoe {
+  color: var(--chamoe);
+}
+
+.section-eyebrow--hongsi {
+  color: var(--hongsi);
+}
+
+.section-eyebrow--hallabong {
+  color: var(--hallabong-light);
   margin-top: 0.35rem;
   min-height: 1em;
 }
@@ -1104,22 +1174,21 @@ body {
 .radio-custom {
   width: 14px;
   height: 14px;
-  border-radius: 50%;
+  border-radius: 3px;
   border: 1.5px solid currentColor;
   position: relative;
   flex-shrink: 0;
 }
 
 .radio-custom::after {
-  content: '';
+  content: '✓';
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(0);
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: currentColor;
+  font-size: 10px;
+  line-height: 1;
+  color: currentColor;
   transition: transform 0.15s;
 }
 
@@ -1127,11 +1196,23 @@ body {
   transform: translate(-50%, -50%) scale(1);
 }
 
-.radio-custom--red {
-  color: var(--red-light);
+.radio-custom--omija {
+  color: var(--omija-light);
 }
 
-.radio-custom--teal {
+.section-eyebrow--chamoe {
+  color: var(--chamoe);
+}
+
+.section-eyebrow--hongsi {
+  color: var(--hongsi);
+}
+
+.section-eyebrow--hallabong {
+  color: var(--hallabong-light);
+}
+
+.radio-custom--hallabong {
   color: var(--teal-light);
 }
 
@@ -1187,8 +1268,8 @@ body {
 /* ===== FOOTER ===== */
 .footer {
   padding: 3rem 0;
-  border-top: 1px solid var(--border);
-  background: var(--bg);
+  /* border-top removed */
+  background: transparent !important;
 }
 
 .footer-inner {
@@ -1333,3 +1414,891 @@ body {
     transform: translateX(0);
   }
 }
+
+.vibe-fill--chamoe {
+  background: var(--chamoe);
+}
+
+.vibe-fill--hongsi {
+  background: var(--hongsi);
+}
+
+.radio-custom--chamoe {
+  color: var(--chamoe);
+}
+
+.radio-custom--hongsi {
+  color: var(--hongsi);
+}
+
+.switch-section--chamoe {
+  background: transparent !important;
+}
+
+.switch-section--hongsi {
+  background: transparent !important;
+}
+
+.switch-glow--chamoe {
+  background: var(--chamoe-glow);
+  top: -15%;
+  left: -15%;
+  filter: blur(100px);
+  position: absolute;
+  width: 60vw;
+  height: 60vw;
+  border-radius: 50%;
+}
+
+.switch-glow--hongsi {
+  background: var(--hongsi-glow);
+  bottom: -15%;
+  right: -15%;
+  filter: blur(100px);
+  position: absolute;
+  width: 60vw;
+  height: 60vw;
+  border-radius: 50%;
+}
+
+.btn--outline.btn--chamoe {
+  color: var(--chamoe);
+}
+
+.btn--outline.btn--hongsi {
+  color: var(--hongsi);
+}
+
+.btn--outline.btn--hallabong {
+  color: var(--hallabong);
+}
+
+/* ========================================================= */
+/* AUTO-GENERATED CSS FOR 6 SWITCHES OVERRIDING EARLIER CSS  */
+/* ========================================================= */
+
+:root {
+  --jangsanbeom: #E2DCC8;
+  --jangsanbeom-light: #A5F2F3;
+  --jangsanbeom-glow: rgba(226, 220, 200, 0.35);
+  --omija: #8B002B;
+  --omija-light: #FFB6C1;
+  --omija-glow: rgba(139, 0, 43, 0.35);
+  --chamoe: #F9C80E;
+  --chamoe-light: #FFFFFF;
+  --chamoe-glow: rgba(249, 200, 14, 0.35);
+  --hongsi: #E05A3D;
+  --hongsi-light: #FFF5EE;
+  --hongsi-glow: rgba(224, 90, 61, 0.35);
+  --hallabong: #FF8200;
+  --hallabong-light: #32CD32;
+  --hallabong-glow: rgba(255, 130, 0, 0.35);
+  --hanbok: #1A1B41;
+  --hanbok-light: #F8F9FA;
+  --hanbok-glow: rgba(26, 27, 65, 0.35);
+
+}
+
+.section-eyebrow--jangsanbeom {
+  color: var(--jangsanbeom-light);
+}
+
+.section-eyebrow--omija {
+  color: var(--omija-light);
+}
+
+.section-eyebrow--chamoe {
+  color: var(--chamoe-light);
+}
+
+.section-eyebrow--hongsi {
+  color: var(--hongsi-light);
+}
+
+.section-eyebrow--hallabong {
+  color: var(--hallabong-light);
+}
+
+.section-eyebrow--hanbok {
+  color: var(--hanbok-light);
+}
+
+
+.btn--jangsanbeom {
+  background: var(--jangsanbeom);
+  color: #000;
+  box-shadow: 0 4px 24px var(--jangsanbeom-glow);
+}
+
+.btn--jangsanbeom:hover {
+  box-shadow: 0 8px 32px var(--jangsanbeom-glow);
+}
+
+.btn--outline.btn--jangsanbeom {
+  background: transparent;
+  color: var(--jangsanbeom);
+}
+
+.btn--omija {
+  background: var(--omija);
+  color: #fff;
+  box-shadow: 0 4px 24px var(--omija-glow);
+}
+
+.btn--omija:hover {
+  box-shadow: 0 8px 32px var(--omija-glow);
+}
+
+.btn--outline.btn--omija {
+  background: transparent;
+  color: var(--omija);
+}
+
+.btn--chamoe {
+  background: var(--chamoe);
+  color: #000;
+  box-shadow: 0 4px 24px var(--chamoe-glow);
+}
+
+.btn--chamoe:hover {
+  box-shadow: 0 8px 32px var(--chamoe-glow);
+}
+
+.btn--outline.btn--chamoe {
+  background: transparent;
+  color: var(--chamoe);
+}
+
+.btn--hongsi {
+  background: var(--hongsi);
+  color: #fff;
+  box-shadow: 0 4px 24px var(--hongsi-glow);
+}
+
+.btn--hongsi:hover {
+  box-shadow: 0 8px 32px var(--hongsi-glow);
+}
+
+.btn--outline.btn--hongsi {
+  background: transparent;
+  color: var(--hongsi);
+}
+
+.btn--hallabong {
+  background: var(--hallabong);
+  color: #000;
+  box-shadow: 0 4px 24px var(--hallabong-glow);
+}
+
+.btn--hallabong:hover {
+  box-shadow: 0 8px 32px var(--hallabong-glow);
+}
+
+.btn--outline.btn--hallabong {
+  background: transparent;
+  color: var(--hallabong);
+}
+
+.btn--hanbok {
+  background: var(--hanbok);
+  color: #fff;
+  box-shadow: 0 4px 24px var(--hanbok-glow);
+}
+
+.btn--hanbok:hover {
+  box-shadow: 0 8px 32px var(--hanbok-glow);
+}
+
+.btn--outline.btn--hanbok {
+  background: transparent;
+  color: var(--hanbok-light);
+}
+
+.hero-glow--jangsanbeom {
+  background: var(--jangsanbeom-glow);
+  top: -15%;
+  left: -15%;
+}
+
+.hero-glow--omija {
+  background: var(--omija-glow);
+  top: 15%;
+  right: -15%;
+}
+
+.hero-glow--chamoe {
+  background: var(--chamoe-glow);
+  top: -15%;
+  left: -15%;
+}
+
+.hero-glow--hongsi {
+  background: var(--hongsi-glow);
+  top: 15%;
+  right: -15%;
+}
+
+.hero-glow--hallabong {
+  background: var(--hallabong-glow);
+  top: -15%;
+  left: -15%;
+}
+
+.hero-glow--hanbok {
+  background: var(--hanbok-glow);
+  top: 15%;
+  right: -15%;
+}
+
+.switch-section--jangsanbeom {
+  background: transparent !important;
+}
+
+.switch-section--omija {
+  background: transparent !important;
+}
+
+.switch-section--chamoe {
+  background: transparent !important;
+}
+
+.switch-section--hongsi {
+  background: transparent !important;
+}
+
+.switch-section--hallabong {
+  background: transparent !important;
+}
+
+.switch-section--hanbok {
+  background: transparent !important;
+}
+
+.switch-glow--jangsanbeom {
+  background: rgba(226, 220, 200, 0.12);
+  top: -10%;
+  left: -10%;
+}
+
+.switch-glow--omija {
+  background: rgba(139, 0, 43, 0.12);
+  top: -10%;
+  right: -10%;
+}
+
+.switch-glow--chamoe {
+  background: rgba(249, 200, 14, 0.12);
+  top: -10%;
+  left: -10%;
+}
+
+.switch-glow--hongsi {
+  background: rgba(224, 90, 61, 0.12);
+  top: -10%;
+  right: -10%;
+}
+
+.switch-glow--hallabong {
+  background: rgba(255, 130, 0, 0.12);
+  top: -10%;
+  left: -10%;
+}
+
+.switch-glow--hanbok {
+  background: rgba(26, 27, 65, 0.12);
+  top: -10%;
+  right: -10%;
+}
+
+.vibe-fill--jangsanbeom {
+  background: linear-gradient(90deg, var(--jangsanbeom), var(--jangsanbeom-light));
+}
+
+.vibe-fill--omija {
+  background: linear-gradient(90deg, var(--omija), var(--omija-light));
+}
+
+.vibe-fill--chamoe {
+  background: linear-gradient(90deg, var(--chamoe), var(--chamoe-light));
+}
+
+.vibe-fill--hongsi {
+  background: linear-gradient(90deg, var(--hongsi), var(--hongsi-light));
+}
+
+.vibe-fill--hallabong {
+  background: linear-gradient(90deg, var(--hallabong), var(--hallabong-light));
+}
+
+.vibe-fill--hanbok {
+  background: linear-gradient(90deg, var(--hanbok), var(--hanbok-light));
+}
+
+.radio-custom--jangsanbeom {
+  color: var(--jangsanbeom-light);
+}
+
+.radio-custom--omija {
+  color: var(--omija-light);
+}
+
+.radio-custom--chamoe {
+  color: var(--chamoe-light);
+}
+
+.radio-custom--hongsi {
+  color: var(--hongsi-light);
+}
+
+.radio-custom--hallabong {
+  color: var(--hallabong-light);
+}
+
+.radio-custom--hanbok {
+  color: var(--hanbok-light);
+}
+
+
+/* Fix switch glow blur if not already present */
+.switch-glow {
+  filter: blur(240px);
+  position: absolute;
+  width: 140vw;
+  height: 140vw;
+  border-radius: 50%;
+  opacity: 0.35;
+  pointer-events: none;
+  z-index: 0;
+}
+
+
+/* ===== PROGRESS SECTION ===== */
+.progress {
+  padding: 12rem 0;
+  background: transparent !important;
+  position: relative;
+  overflow: visible;
+}
+
+.progress::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+}
+
+.progress-header {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.progress-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  position: relative;
+}
+
+/* Connecting line */
+@media (min-width: 992px) {
+  .progress-grid::before {
+    content: '';
+    position: absolute;
+    top: 32px;
+    left: 50px;
+    right: 50px;
+    height: 2px;
+    background: var(--border);
+    z-index: 0;
+  }
+}
+
+.progress-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 2.5rem;
+  position: relative;
+  z-index: 1;
+  transition: transform 0.3s, border-color 0.3s;
+}
+
+.progress-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.progress-card--active {
+  background: var(--surface-2);
+  border-color: var(--gold);
+  box-shadow: 0 8px 32px rgba(212, 175, 55, 0.08);
+}
+
+.progress-card--active::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  right: -1px;
+  bottom: -1px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, var(--gold), transparent, var(--gold));
+  z-index: -1;
+  opacity: 0.3;
+}
+
+.progress-card--locked {
+  opacity: 0.6;
+}
+
+.progress-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+  color: var(--text);
+}
+
+.progress-card--active .progress-icon {
+  background: rgba(212, 175, 55, 0.1);
+  color: var(--gold);
+}
+
+.progress-card-title {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--text);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.badge {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+}
+
+.badge--active {
+  background: rgba(212, 175, 55, 0.1);
+  border-color: rgba(212, 175, 55, 0.3);
+  color: var(--gold);
+}
+
+.progress-card-desc {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+}
+
+.progress-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.progress-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.9rem;
+  color: var(--text);
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.status-dot--planning {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.status-dot--sampling {
+  background: var(--gold);
+  box-shadow: 0 0 8px rgba(212, 175, 55, 0.5);
+  animation: pulse-gold 2s infinite;
+}
+
+@keyframes pulse-gold {
+  0% {
+    box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.4);
+  }
+
+  70% {
+    box-shadow: 0 0 0 6px rgba(212, 175, 55, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(212, 175, 55, 0);
+  }
+}
+
+.progress-empty {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px dashed rgba(255, 255, 255, 0.1);
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  width: 100%;
+}
+
+/* ========================================================= */
+/* AUTO-GENERATED CSS FOR OBANGSAEK RESTRUCTURE  */
+/* ========================================================= */
+
+:root {
+  --jangsanbeom: #F5F5F5;
+  --jangsanbeom-light: #FFFFFF;
+  --jangsanbeom-glow: rgba(245, 245, 245, 0.35);
+  --omija: #D32F2F;
+  --omija-light: #FF6659;
+  --omija-glow: rgba(211, 47, 47, 0.35);
+  --chamoe: #FBC02D;
+  --chamoe-light: #FFF263;
+  --chamoe-glow: rgba(251, 192, 45, 0.35);
+  --hongsi: #C2185B;
+  --hongsi-light: #FA5788;
+  --hongsi-glow: rgba(194, 24, 91, 0.35);
+  --hallabong: #E64A19;
+  --hallabong-light: #FF7D47;
+  --hallabong-glow: rgba(230, 74, 25, 0.35);
+  --hanbok: #1976D2;
+  --hanbok-light: #63A4FF;
+  --hanbok-glow: rgba(25, 118, 210, 0.35);
+
+}
+
+/* Category headers */
+.category-section {
+  position: relative;
+}
+
+.category-header {
+  text-align: center;
+  padding: 18rem 0 0rem;
+  background: transparent;
+  position: relative;
+  z-index: 5;
+  margin-bottom: -10rem;
+}
+
+.category-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 1rem;
+}
+
+.category-desc {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+}
+
+.section-eyebrow--jangsanbeom {
+  color: var(--jangsanbeom-light);
+}
+
+.section-eyebrow--omija {
+  color: var(--omija-light);
+}
+
+.section-eyebrow--chamoe {
+  color: var(--chamoe-light);
+}
+
+.section-eyebrow--hongsi {
+  color: var(--hongsi-light);
+}
+
+.section-eyebrow--hallabong {
+  color: var(--hallabong-light);
+}
+
+.section-eyebrow--hanbok {
+  color: var(--hanbok-light);
+}
+
+
+.btn--jangsanbeom {
+  background: var(--jangsanbeom);
+  color: #000;
+  box-shadow: 0 4px 24px var(--jangsanbeom-glow);
+}
+
+.btn--jangsanbeom:hover {
+  box-shadow: 0 8px 32px var(--jangsanbeom-glow);
+}
+
+.btn--outline.btn--jangsanbeom {
+  background: transparent;
+  color: var(--jangsanbeom);
+}
+
+.btn--omija {
+  background: var(--omija);
+  color: #FFF;
+  box-shadow: 0 4px 24px var(--omija-glow);
+}
+
+.btn--omija:hover {
+  box-shadow: 0 8px 32px var(--omija-glow);
+}
+
+.btn--outline.btn--omija {
+  background: transparent;
+  color: var(--omija);
+}
+
+.btn--chamoe {
+  background: var(--chamoe);
+  color: #000;
+  box-shadow: 0 4px 24px var(--chamoe-glow);
+}
+
+.btn--chamoe:hover {
+  box-shadow: 0 8px 32px var(--chamoe-glow);
+}
+
+.btn--outline.btn--chamoe {
+  background: transparent;
+  color: var(--chamoe);
+}
+
+.btn--hongsi {
+  background: var(--hongsi);
+  color: #FFF;
+  box-shadow: 0 4px 24px var(--hongsi-glow);
+}
+
+.btn--hongsi:hover {
+  box-shadow: 0 8px 32px var(--hongsi-glow);
+}
+
+.btn--outline.btn--hongsi {
+  background: transparent;
+  color: var(--hongsi);
+}
+
+.btn--hallabong {
+  background: var(--hallabong);
+  color: #FFF;
+  box-shadow: 0 4px 24px var(--hallabong-glow);
+}
+
+.btn--hallabong:hover {
+  box-shadow: 0 8px 32px var(--hallabong-glow);
+}
+
+.btn--outline.btn--hallabong {
+  background: transparent;
+  color: var(--hallabong);
+}
+
+.btn--hanbok {
+  background: var(--hanbok);
+  color: #FFF;
+  box-shadow: 0 4px 24px var(--hanbok-glow);
+}
+
+.btn--hanbok:hover {
+  box-shadow: 0 8px 32px var(--hanbok-glow);
+}
+
+.btn--outline.btn--hanbok {
+  background: transparent;
+  color: var(--hanbok);
+}
+
+.hero-glow--jangsanbeom {
+  background: var(--jangsanbeom-glow);
+  top: -15%;
+  left: -15%;
+}
+
+.hero-glow--omija {
+  background: var(--omija-glow);
+  top: 15%;
+  right: -15%;
+}
+
+.hero-glow--chamoe {
+  background: var(--chamoe-glow);
+  top: -15%;
+  left: -15%;
+}
+
+.hero-glow--hongsi {
+  background: var(--hongsi-glow);
+  top: 15%;
+  right: -15%;
+}
+
+.hero-glow--hallabong {
+  background: var(--hallabong-glow);
+  top: -15%;
+  left: -15%;
+}
+
+.hero-glow--hanbok {
+  background: var(--hanbok-glow);
+  top: 15%;
+  right: -15%;
+}
+
+.switch-section--jangsanbeom {
+  background: transparent;
+  padding: 12rem 0;
+  position: relative;
+  overflow: visible;
+}
+
+.switch-section--omija {
+  background: transparent;
+  padding: 12rem 0;
+  position: relative;
+  overflow: visible;
+}
+
+.switch-section--chamoe {
+  background: transparent;
+  padding: 12rem 0;
+  position: relative;
+  overflow: visible;
+}
+
+.switch-section--hongsi {
+  background: transparent;
+  padding: 12rem 0;
+  position: relative;
+  overflow: visible;
+}
+
+.switch-section--hallabong {
+  background: transparent;
+  padding: 12rem 0;
+  position: relative;
+  overflow: visible;
+}
+
+.switch-section--hanbok {
+  background: transparent;
+  padding: 12rem 0;
+  position: relative;
+  overflow: visible;
+}
+
+.switch-glow--jangsanbeom {
+  background: rgba(245, 245, 245, 0.12);
+  top: -10%;
+  left: -10%;
+}
+
+.switch-glow--omija {
+  background: rgba(211, 47, 47, 0.12);
+  top: -10%;
+  right: -10%;
+}
+
+.switch-glow--chamoe {
+  background: rgba(251, 192, 45, 0.12);
+  top: -10%;
+  left: -10%;
+}
+
+.switch-glow--hongsi {
+  background: rgba(194, 24, 91, 0.12);
+  top: -10%;
+  right: -10%;
+}
+
+.switch-glow--hallabong {
+  background: rgba(230, 74, 25, 0.12);
+  top: -10%;
+  left: -10%;
+}
+
+.switch-glow--hanbok {
+  background: rgba(25, 118, 210, 0.12);
+  top: -10%;
+  right: -10%;
+}
+
+.vibe-fill--jangsanbeom {
+  background: linear-gradient(90deg, var(--jangsanbeom), var(--jangsanbeom-light));
+}
+
+.vibe-fill--omija {
+  background: linear-gradient(90deg, var(--omija), var(--omija-light));
+}
+
+.vibe-fill--chamoe {
+  background: linear-gradient(90deg, var(--chamoe), var(--chamoe-light));
+}
+
+.vibe-fill--hongsi {
+  background: linear-gradient(90deg, var(--hongsi), var(--hongsi-light));
+}
+
+.vibe-fill--hallabong {
+  background: linear-gradient(90deg, var(--hallabong), var(--hallabong-light));
+}
+
+.vibe-fill--hanbok {
+  background: linear-gradient(90deg, var(--hanbok), var(--hanbok-light));
+}
+
+.radio-custom--jangsanbeom {
+  color: var(--jangsanbeom-light);
+}
+
+.radio-custom--omija {
+  color: var(--omija-light);
+}
+
+.radio-custom--chamoe {
+  color: var(--chamoe-light);
+}
+
+.radio-custom--hongsi {
+  color: var(--hongsi-light);
+}
+
+.radio-custom--hallabong {
+  color: var(--hallabong-light);
+}
+
+.radio-custom--hanbok {
+  color: var(--hanbok-light);
+}
+
+
+.switch-section::before,
+
+
+
+
