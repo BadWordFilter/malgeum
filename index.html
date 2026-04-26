@@ -17,6 +17,10 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Nanum+Myeongjo:wght@400;700;800&family=Montserrat:wght@300;400;500&family=Noto+Sans+KR:wght@300;400;500&display=swap"
     rel="stylesheet" />
+  
+  <!-- Lenis Smooth Scroll -->
+  <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+  
   <link rel="stylesheet" href="style.css" />
 </head>
 
@@ -42,6 +46,20 @@
         <li><a href="#silent" class="nav-link" id="nav-silent">저소음 (Silent)</a></li>
         <li><a href="#progress" class="nav-link">진행상황</a></li>
         <li><a href="#contact" class="nav-link nav-link--cta" id="nav-contact">사전 등록</a></li>
+        <li>
+          <div class="custom-dropdown" id="desktop-lang">
+            <button class="dropdown-toggle" aria-haspopup="listbox" aria-expanded="false">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+              <span class="current-lang">한국어</span>
+              <svg class="chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <ul class="dropdown-menu" role="listbox">
+              <li role="option" data-value="ko">한국어</li>
+              <li role="option" data-value="en">English</li>
+              <li role="option" data-value="zh">中文</li>
+            </ul>
+          </div>
+        </li>
       </ul>
       <button class="nav-toggle" id="navToggle" aria-label="메뉴 열기" aria-expanded="false" aria-controls="mobileMenu">
         <span class="burger-bar"></span>
@@ -59,6 +77,20 @@
         <li><a href="#silent" class="mobile-link" id="m-nav-silent">저소음 (Silent)</a></li>
         <li><a href="#progress" class="mobile-link">진행상황</a></li>
         <li><a href="#contact" class="mobile-link mobile-link--cta" id="m-nav-contact">사전 등록</a></li>
+        <li>
+          <div class="custom-dropdown" id="mobile-lang">
+            <button class="dropdown-toggle" aria-haspopup="listbox" aria-expanded="false">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+              <span class="current-lang">한국어</span>
+              <svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <ul class="dropdown-menu" role="listbox">
+              <li role="option" data-value="ko">한국어</li>
+              <li role="option" data-value="en">English</li>
+              <li role="option" data-value="zh">中文</li>
+            </ul>
+          </div>
+        </li>
       </ul>
     </div>
   </header>
@@ -720,7 +752,12 @@
 
     <!-- ===== DIVIDER ===== -->
     <div class="section-divider" aria-hidden="true">
-      <div class="divider-text">맑음 · MALGEUM · 맑음 · MALGEUM · 맑음 · MALGEUM · 맑음 · MALGEUM · 맑음 · MALGEUM · 맑음 · MALGEUM · 맑음 · MALGEUM · 맑음 · MALGEUM · 맑음 · MALGEUM · 맑음 · MALGEUM · 맑음 · MALGEUM · 맑음 · MALGEUM · 맑음 · MALGEUM · 맑음 · MALGEUM · 맑음 · MALGEUM · 맑음 · MALGEUM · 맑음 · MALGEUM · 맑음 · MALGEUM · 맑음 · MALGEUM · 맑음 · MALGEUM · 맑음 · MALGEUM · 맑음 · MALGEUM · 맑음 · MALGEUM · 맑음 · MALGEUM · 맑음 · MALGEUM · 맑음 · MALGEUM · 맑음 · MALGEUM · 맑음 · MALGEUM · 맑음 · MALGEUM · 맑음 · MALGEUM · 맑음 · MALGEUM · 맑음 · MALGEUM · 맑음 · MALGEUM · 맑음 · MALGEUM · 맑음 · MALGEUM · 맑음 · MALGEUM · 맑음 · MALGEUM · 맑음 · MALGEUM · 맑음 · MALGEUM · 맑음 · MALGEUM · </div>
+      <div class="divider-text">맑음 · MALGEUM · 맑음 · MALGEUM · 맑음 · MALGEUM · 맑음 · MALGEUM · 맑음 · MALGEUM · 맑음 · MALGEUM
+        · 맑음 · MALGEUM · 맑음 · MALGEUM · 맑음 · MALGEUM · 맑음 · MALGEUM · 맑음 · MALGEUM · 맑음 · MALGEUM · 맑음 · MALGEUM · 맑음 ·
+        MALGEUM · 맑음 · MALGEUM · 맑음 · MALGEUM · 맑음 · MALGEUM · 맑음 · MALGEUM · 맑음 · MALGEUM · 맑음 · MALGEUM · 맑음 · MALGEUM
+        · 맑음 · MALGEUM · 맑음 · MALGEUM · 맑음 · MALGEUM · 맑음 · MALGEUM · 맑음 · MALGEUM · 맑음 · MALGEUM · 맑음 · MALGEUM · 맑음 ·
+        MALGEUM · 맑음 · MALGEUM · 맑음 · MALGEUM · 맑음 · MALGEUM · 맑음 · MALGEUM · 맑음 · MALGEUM · 맑음 · MALGEUM · 맑음 · MALGEUM
+        · 맑음 · MALGEUM · 맑음 · MALGEUM · 맑음 · MALGEUM · 맑음 · MALGEUM · </div>
     </div>
 
     <!-- ===== CONTACT ===== -->
@@ -779,7 +816,8 @@
                     <span>홍시 축</span>
                   </label>
                   <label class="radio-label" for="interest-hallabong">
-                    <input type="checkbox" id="interest-hallabong" name="interest" value="hallabong" class="radio-input" />
+                    <input type="checkbox" id="interest-hallabong" name="interest" value="hallabong"
+                      class="radio-input" />
                     <span class="radio-custom radio-custom--hallabong" aria-hidden="true"></span>
                     <span>한라봉 축</span>
                   </label>
@@ -838,6 +876,7 @@
     </div>
   </footer>
 
+  <script src="i18n.js"></script>
   <script src="main.js"></script>
 </body>
 

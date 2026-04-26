@@ -1,5 +1,48 @@
 /* ===== MALGEUM — main.js ===== */
 
+// Initialize Lenis Smooth Scroll
+const lenis = new Lenis({
+  duration: 1.5,
+  easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // 부드러운 가감속
+  direction: 'vertical',
+  gestureDirection: 'vertical',
+  smooth: true,
+  mouseMultiplier: 1,
+  smoothTouch: false,
+  touchMultiplier: 2,
+  infinite: false,
+});
+
+function raf(time) {
+  lenis.raf(time);
+  requestAnimationFrame(raf);
+}
+
+requestAnimationFrame(raf);
+
+// Smooth scrolling for anchor links using Lenis
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    const targetId = this.getAttribute('href');
+    if (targetId === '#') return;
+    
+    const targetElement = document.querySelector(targetId);
+    if (targetElement) {
+      e.preventDefault();
+      lenis.scrollTo(targetElement, { offset: -72 }); // Navbar offset 적용
+      
+      // Close mobile menu if open
+      if (navToggle.classList.contains('open')) {
+        navToggle.classList.remove('open');
+        mobileMenu.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', 'false');
+        mobileMenu.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      }
+    }
+  });
+});
+
 // Navbar scroll
 const navbar = document.getElementById('navbar');
 window.addEventListener('scroll', () => {
@@ -16,15 +59,7 @@ navToggle.addEventListener('click', () => {
   mobileMenu.setAttribute('aria-hidden', !isOpen);
   document.body.style.overflow = isOpen ? 'hidden' : '';
 });
-mobileMenu.querySelectorAll('.mobile-link').forEach(link => {
-  link.addEventListener('click', () => {
-    navToggle.classList.remove('open');
-    mobileMenu.classList.remove('open');
-    navToggle.setAttribute('aria-expanded', 'false');
-    mobileMenu.setAttribute('aria-hidden', 'true');
-    document.body.style.overflow = '';
-  });
-});
+// (앵커 링크 클릭 시 모바일 메뉴 닫기 로직은 상단 Lenis 앵커 핸들러로 통합됨)
 
 // Hero reveal on load
 window.addEventListener('load', () => {
@@ -42,7 +77,7 @@ const scrollObserver = new IntersectionObserver((entries) => {
       scrollObserver.unobserve(entry.target);
     }
   });
-}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+}, { threshold: 0, rootMargin: '0px 0px -15% 0px' });
 
 document.querySelectorAll('[data-scroll-reveal]').forEach(el => scrollObserver.observe(el));
 
