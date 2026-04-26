@@ -939,9 +939,10 @@ body {
 }
 
 .switch-text-primary .section-title {
-  font-size: clamp(2.5rem, 6vw, 4.5rem);
-  line-height: 1.15;
-  margin-bottom: 2rem;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.25;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
 }
 
 .switch-desc {
@@ -2107,14 +2108,14 @@ body {
 
 .category-title {
   font-family: var(--font-serif);
-  font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 700;
-  color: var(--text);
+  font-size: clamp(3.5rem, 8vw, 6rem);
+  font-weight: 900;
+  color: var(--gold);
   margin-bottom: 1rem;
 }
 
 .category-desc {
-  font-size: 1.1rem;
+  font-size: 1.25rem;
   color: var(--text-muted);
 }
 
