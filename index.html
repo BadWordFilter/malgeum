@@ -789,6 +789,34 @@
               </div>
               <span class="form-error" id="email-error" role="alert" aria-live="polite"></span>
             </div>
+            <div class="form-group">
+              <label for="name-input" class="form-label">이름 (수령인) <span class="required" aria-hidden="true">*</span></label>
+              <div class="form-input-wrap">
+                <input type="text" id="name-input" name="name" class="form-input" placeholder="홍길동" required aria-required="true" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="phone-input" class="form-label">연락처 <span class="required" aria-hidden="true">*</span></label>
+              <div class="form-input-wrap">
+                <input type="tel" id="phone-input" name="phone" class="form-input" placeholder="010-1234-5678" required aria-required="true" />
+              </div>
+            </div>
+
+            <div class="form-group" style="display: flex; gap: 1rem;">
+              <div style="flex: 1;">
+                <label for="zipcode-input" class="form-label">우편번호 <span class="required" aria-hidden="true">*</span></label>
+                <div class="form-input-wrap">
+                  <input type="text" id="zipcode-input" name="zipcode" class="form-input" placeholder="12345" required aria-required="true" />
+                </div>
+              </div>
+              <div style="flex: 2;">
+                <label for="address-input" class="form-label">기본/상세주소 <span class="required" aria-hidden="true">*</span></label>
+                <div class="form-input-wrap">
+                  <input type="text" id="address-input" name="address" class="form-input" placeholder="00로 00, 00동 00호" required aria-required="true" />
+                </div>
+              </div>
+            </div>
 
             <div class="form-group">
               <fieldset class="switch-interest">
@@ -828,6 +856,25 @@
                   </label>
                 </div>
               </fieldset>
+            </div>
+
+            <div class="form-group">
+              <label for="quantity-input" class="form-label">희망 수량 <span class="required" aria-hidden="true">*</span></label>
+              <div class="form-input-wrap">
+                <input type="text" id="quantity-input" name="quantity" class="form-input" placeholder="예: 장산범 90개, 오미자 110개" required aria-required="true" />
+              </div>
+            </div>
+
+            <div class="form-group" style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border);">
+              <label style="display: flex; gap: 0.75rem; align-items: flex-start; cursor: pointer;">
+                <input type="checkbox" id="privacy-input" name="privacy" required style="margin-top: 0.25rem; width: 1.2rem; height: 1.2rem; accent-color: var(--text);" />
+                <span style="font-size: 0.85rem; line-height: 1.5; color: var(--text-muted);">
+                  <strong>개인정보 수집 및 이용에 동의합니다. (필수)</strong><br>
+                  수집 목적: 사전 예약 상품 배송 및 안내<br>
+                  수집 항목: 이름, 연락처, 배송지 주소, 이메일<br>
+                  보유 기간: 배송 완료 후 즉시 파기
+                </span>
+              </label>
             </div>
 
             <button type="submit" class="btn btn--submit" id="submit-btn" aria-describedby="submit-feedback">
