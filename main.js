@@ -145,12 +145,14 @@ contactForm && contactForm.addEventListener('submit', async (e) => {
 
   const interestText = interestTexts.length > 0 ? interestTexts.join(', ') : '전체 스위치';
 
-  // Make it actually functional via mailto
+  // Open mailto in a new tab so the page doesn't navigate away
   const subject = encodeURIComponent(`[맑음 사전등록] 관심 스위치 알림 신청`);
   const body = encodeURIComponent(`사전 등록을 신청합니다.\n\n이메일: ${email}\n관심 스위치: ${interestText}`);
-  window.location.href = `mailto:contact@hmbg.kr?subject=${subject}&body=${body}`;
+  const mailtoLink = `mailto:contact@hmbg.kr?subject=${subject}&body=${body}`;
+  window.open(mailtoLink, '_blank');
 
-  await new Promise(r => setTimeout(r, 800)); // Short delay for better UX
+  // Show success message immediately after opening mail client
+  await new Promise(r => setTimeout(r, 400));
   contactForm.style.display = 'none';
   contactSuccess.style.display = 'block';
   contactSuccess.removeAttribute('aria-hidden');
