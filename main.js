@@ -166,7 +166,7 @@ contactForm && contactForm.addEventListener('submit', async (e) => {
   formData.append('entry.1205993398', zipcode);
   formData.append('entry.884922465', address);
   formData.append('entry.1107055866', quantity); // 희망 수량
-  formData.append('entry.130393391', '개인정보 수집 · 이용에 동의합니다'); // 체크박스 값
+  formData.append('entry.130393391', '개인정보 수집 및 이용에 동의합니다.'); // 체크박스 값
   formData.append('emailAddress', email); // 구글폼 설정의 이메일 수집용 필드
 
   interestTexts.forEach(interest => {
