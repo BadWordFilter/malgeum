@@ -20,7 +20,7 @@
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="nav-content">
-            <a href="#" class="logo">
+            <a href="#" class="logo" aria-label="맑음 홈">
                 <span class="logo-kr">맑음</span>
                 <span class="logo-en">MALGEUM</span>
             </a>
@@ -97,7 +97,7 @@
                 <!-- Spring: Maegu -->
                 <div class="switch-card glass-card spring-card">
                     <div class="card-glow"></div>
-                    <div class="season-badge">🌸 봄 (매구)</div>
+                    <div class="season-badge"><span class="badge-icon">春</span> 봄 (매구)</div>
                     <h3 class="switch-name">매구 스위치</h3>
                     <p class="switch-trait">저키압 리니어</p>
                     <div class="switch-desc">
@@ -111,7 +111,7 @@
                 <div class="switch-card glass-card summer-card">
                     <div class="card-glow"></div>
                     <div class="ripple-container"></div>
-                    <div class="season-badge">🌊 여름 (미리)</div>
+                    <div class="season-badge"><span class="badge-icon">夏</span> 여름 (미리)</div>
                     <h3 class="switch-name">미리 스위치</h3>
                     <p class="switch-trait">경쾌한 클릭</p>
                     <div class="switch-desc">
@@ -123,7 +123,7 @@
                 <!-- Autumn: Eoduksini -->
                 <div class="switch-card glass-card autumn-card">
                     <div class="card-glow"></div>
-                    <div class="season-badge">🍁 가을 (어둑시니)</div>
+                    <div class="season-badge"><span class="badge-icon">秋</span> 가을 (어둑시니)</div>
                     <h3 class="switch-name">어둑시니 스위치</h3>
                     <p class="switch-trait">묵직한 넌클릭</p>
                     <div class="switch-desc">
@@ -136,7 +136,7 @@
                 <div class="switch-card glass-card winter-card">
                     <div class="card-glow"></div>
                     <div class="fog-overlay"></div>
-                    <div class="season-badge">❄️ 겨울 (장산범)</div>
+                    <div class="season-badge"><span class="badge-icon">冬</span> 겨울 (장산범)</div>
                     <h3 class="switch-name">장산범 스위치</h3>
                     <p class="switch-trait">완벽한 무소음 리니어</p>
                     <div class="switch-desc">
@@ -239,15 +239,58 @@
     <!-- Dev Log Section -->
     <section id="devlog" class="devlog section-padding">
         <div class="container">
-            <div class="devlog-wrapper glass-panel" data-reveal>
+            <div class="section-header text-center" data-reveal>
+                <span class="tag">개발 노트 #1</span>
+                <h2 class="section-heading">맑음(MALGEUM)의 사계절,<br>그 완벽한 타건감을 찾아서</h2>
+                <p>2026.04.21 - 현재 진행 중</p>
+            </div>
+
+            <div class="devlog-wrapper glass-panel" data-reveal style="text-align: left; padding: 48px; margin-top: 40px; max-width: 900px; margin-left: auto; margin-right: auto;">
                 <div class="devlog-content">
-                    <span class="tag">개발 노트</span>
-                    <h2 class="section-heading">타건음 및 스프링 압력 조정 중</h2>
-                    <p>현재 최적의 타건감을 위해 제조사와 스프링 및 키압을 세밀하게 조율하고 있습니다.<br>타건 테스트 영상이 곧 업로드될 예정입니다.</p>
-                    <div class="status-bar">
-                        <div class="status-progress"></div>
+                    <div class="devlog-intro" style="margin-bottom: 48px;">
+                        <p style="margin-bottom: 16px;">안녕하세요, 프리미엄 커스텀 스위치 브랜드 <strong class="highlight">맑음(MALGEUM)</strong>입니다.</p>
+                        <p style="margin-bottom: 16px;">한국의 사계절과 전설 속 요괴들의 이야기를 손끝의 감각으로 구현하기 위해, 저희는 현재 전 세계에서 가장 인정받는 스위치 제조사들과 긴밀하게 협력하며 치열한 테스트를 진행하고 있습니다.</p>
+                        <p style="margin-bottom: 16px;">최근 저희 랩(Lab)에 글로벌 탑티어 제조사인 TTC와 <strong class="highlight">Kailh(카일)</strong>로부터 대량의 커스텀 베이스 샘플이 무사히 도착했습니다. 각 계절의 콘셉트에 가장 완벽하게 부합하는 타건감(Typing feel)과 사운드 프로파일, 소재 특성을 찾아내기 위한 본격적인 튜닝 과정이 시작되었습니다.</p>
+                        <p style="font-weight: 600; color: var(--text-primary); margin-top: 32px; padding-left: 16px; border-left: 3px solid var(--text-primary);">현재 맑음이 테스트 중인 사계절 스위치의 개발 주안점을 사전 공개합니다!</p>
                     </div>
-                    <p class="status-text">Test in progress...</p>
+
+                    <div class="devlog-seasons" style="display: grid; gap: 24px; margin-bottom: 48px;">
+                        <!-- 봄 -->
+                        <div class="devlog-season-item" style="background: rgba(255,255,255,0.6); padding: 28px; border-radius: 16px; border: 1px solid rgba(247, 141, 167, 0.2); transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform='translateY(0)'">
+                            <h4 style="font-size: 1.25rem; color: var(--text-primary); margin-bottom: 12px; font-family: var(--font-serif);"><span style="margin-right: 8px;">🌸</span> 봄 : 매구 (Spring) - 손끝에 닿는 가벼운 봄바람</h4>
+                            <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 12px; padding-bottom: 12px; border-bottom: 1px solid rgba(0,0,0,0.05);"><strong>Base Sample:</strong> Kailh Midnight Pro Light Yellow, Kailh Box White V2</p>
+                            <p style="font-size: 0.95rem; line-height: 1.7; color: var(--text-primary);"><strong>Dev Note:</strong> 핑크빛 벚꽃이 연상되는 파스텔 핑크 테마의 스위치입니다. 손가락에 무리가 가지 않도록 스프링 장력을 세밀하게 조절하여 아주 가볍고 편안한 <strong class="highlight">'저키압'</strong>을 구현하는 데 집중하고 있습니다.</p>
+                        </div>
+                        <!-- 여름 -->
+                        <div class="devlog-season-item" style="background: rgba(255,255,255,0.6); padding: 28px; border-radius: 16px; border: 1px solid rgba(59, 130, 246, 0.2); transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform='translateY(0)'">
+                            <h4 style="font-size: 1.25rem; color: var(--text-primary); margin-bottom: 12px; font-family: var(--font-serif);"><span style="margin-right: 8px;">🌊</span> 여름 : 미리 (Summer) - 무더위를 날리는 청량함</h4>
+                            <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 12px; padding-bottom: 12px; border-bottom: 1px solid rgba(0,0,0,0.05);"><strong>Base Sample:</strong> Kailh Box Jade (or Box Navy), TTC Brother Switch V2</p>
+                            <p style="font-size: 0.95rem; line-height: 1.7; color: var(--text-primary);"><strong>Dev Note:</strong> 파란 시원함을 담은 여름 스위치는 톡 쏘는 탄산처럼 날카롭고 명확한 걸림을 목표로 합니다. 누를 때마다 매우 크고 <strong class="highlight">'경쾌한 클릭음'</strong>이 터져 나오도록 스위치 내부의 클릭/택타일 구조를 집중적으로 테스트하고 있습니다.</p>
+                        </div>
+                        <!-- 가을 -->
+                        <div class="devlog-season-item" style="background: rgba(255,255,255,0.6); padding: 28px; border-radius: 16px; border: 1px solid rgba(224, 122, 95, 0.2); transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform='translateY(0)'">
+                            <h4 style="font-size: 1.25rem; color: var(--text-primary); margin-bottom: 12px; font-family: var(--font-serif);"><span style="margin-right: 8px;">🍁</span> 가을 : 어둑시니 (Autumn) - 낙엽을 밟는 듯한 촉촉함</h4>
+                            <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 12px; padding-bottom: 12px; border-bottom: 1px solid rgba(0,0,0,0.05);"><strong>Base Sample:</strong> TTC Silent Bluish White (Tactile) 등</p>
+                            <p style="font-size: 0.95rem; line-height: 1.7; color: var(--text-primary);"><strong>Dev Note:</strong> 오렌지와 브라운 컬러가 섞인 중후한 테마입니다. 속이 꽉 찬 <strong class="highlight">'묵직한 타건감'</strong>을 베이스로, 귀를 간지럽히는 <strong class="highlight">'촉촉하고 아주 작은 소리(촙촙, 잘각잘각, 달각)'</strong>를 매력적으로 다듬어내는 넌클릭(Tactile) 세팅을 조율 중입니다.</p>
+                        </div>
+                        <!-- 겨울 -->
+                        <div class="devlog-season-item" style="background: rgba(255,255,255,0.6); padding: 28px; border-radius: 16px; border: 1px solid rgba(109, 162, 195, 0.2); transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform='translateY(0)'">
+                            <h4 style="font-size: 1.25rem; color: var(--text-primary); margin-bottom: 12px; font-family: var(--font-serif);"><span style="margin-right: 8px;">❄️</span> 겨울 : 장산범 (Winter) - 눈 덮인 숲속의 완벽한 고요함</h4>
+                            <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 12px; padding-bottom: 12px; border-bottom: 1px solid rgba(0,0,0,0.05);"><strong>Base Sample:</strong> TTC Frozen Silent Switch, Kailh Deep Sea Silent Pro</p>
+                            <p style="font-size: 0.95rem; line-height: 1.7; color: var(--text-primary);"><strong>Dev Note:</strong> 투명함과 스카이블루가 섞인 겨울 스위치는 TTC와 Kailh의 최고급 저소음 기술(Silencing technology)이 융합된 리니어(Linear) 스위치입니다. 타건 시 소리가 전혀 나지 않는 <strong class="highlight">'완벽한 무소음'</strong>에 가까우며, 손가락을 밀어내는 반발력을 최하로 낮추어 구름 위를 걷는 듯한 매끄러움을 선사할 것입니다.</p>
+                        </div>
+                    </div>
+
+                    <div class="devlog-outro" style="background: rgba(0,0,0,0.03); padding: 36px; border-radius: 16px; border: 1px solid rgba(0,0,0,0.05);">
+                        <h4 style="font-size: 1.3rem; font-family: var(--font-serif); margin-bottom: 16px; color: var(--text-primary);">Next Step?</h4>
+                        <p style="margin-bottom: 16px; line-height: 1.7;">저희는 이 베이스 샘플들을 실제 커스텀 키보드에 장착하여 강도 높은 타건 테스트를 진행하고 있습니다. 테스트가 완료되는 대로 각 요괴 콘셉트에 맞는 정확한 팬톤(Pantone) 컬러 코드와 최종 스프링 키압(Spring weights)을 확정하여 제조사와 본격적인 양산 논의에 들어갈 예정입니다.</p>
+                        <p style="margin-bottom: 32px; line-height: 1.7;">맑음이 선보일 4인 4색의 완벽한 타건감, 다가오는 텀블벅 론칭에서 가장 먼저 만나보실 수 있도록 최선을 다해 준비하겠습니다. 곧 공개될 타건음 테스트 영상도 기대해 주세요!</p>
+                        
+                        <div class="status-bar" style="margin: 0 auto 16px; width: 100%; background: rgba(0,0,0,0.08);">
+                            <div class="status-progress" style="width: 60%; background: var(--text-primary);"></div>
+                        </div>
+                        <p class="status-text text-center" aria-live="polite" style="margin-top: 12px;">베이스 샘플 튜닝 및 타건 테스트 진행 중...</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -278,20 +321,23 @@
 
     <!-- Pre-order Modal -->
     <div class="modal-overlay" id="preorderModal">
-        <div class="modal-container glass-panel text-center">
-            <button class="modal-close" id="closeModal">&times;</button>
+        <div class="modal-container glass-panel text-center" role="dialog" aria-modal="true"
+            aria-labelledby="modalTitle">
+            <button class="modal-close" id="closeModal" aria-label="닫기">&times;</button>
             <div style="padding: 40px 10px;">
-                <h2 class="modal-title" style="margin-bottom: 24px;">사전 예약 오픈 예정</h2>
+                <h2 class="modal-title" id="modalTitle" style="margin-bottom: 24px;">사전 예약 오픈 예정</h2>
                 <p class="modal-desc" style="font-size: 1.1rem; line-height: 1.8;">
                     텀블벅 사전 예약 및 알림 신청 기능은<br>
-                    <strong style="color: #fff;">추후 상세 일정과 함께 공개될 예정입니다.</strong><br><br>
+                    <strong style="color: var(--text-primary);">추후 상세 일정과 함께 공개될 예정입니다.</strong><br><br>
                     조금만 더 기다려 주세요!<br>많은 기대와 관심 부탁드립니다.
                 </p>
-                <button type="button" class="btn-primary" id="modalOkBtn" style="margin-top: 32px; padding: 12px 40px;">확인</button>
+                <button type="button" class="btn-primary" id="modalOkBtn"
+                    style="margin-top: 32px; padding: 12px 40px;">확인</button>
             </div>
         </div>
     </div>
 
     <script src="main.js"></script>
 </body>
+
 </html>
