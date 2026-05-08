@@ -2,929 +2,296 @@
 <html lang="ko">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>맑음 (Malgeum) — 한국의 감각으로 만든 키보드 스위치</title>
-  <meta name="description"
-    content="맑음(Malgeum)은 한국의 미감과 장인 정신으로 탄생한 키보드 스위치 브랜드입니다. 김치축과 한복축, 두 가지 감성으로 당신의 타이핑을 완성합니다." />
-  <meta property="og:title" content="맑음 (Malgeum) — 한국의 감각으로 만든 키보드 스위치" />
-  <meta property="og:description" content="김치축과 한복축. 한국의 미감이 담긴 프리미엄 키보드 스위치." />
-  <meta property="og:type" content="website" />
-
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Nanum+Myeongjo:wght@400;700;800&family=Montserrat:wght@300;400;500&family=Noto+Sans+KR:wght@300;400;500&display=swap"
-    rel="stylesheet" />
-  
-  <!-- Lenis Smooth Scroll -->
-  <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
-  
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>맑음(MALGEUM) - 프리미엄 커스텀 스위치</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Nanum+Myeongjo:wght@400;700;800&family=Montserrat:wght@300;400;500;600&family=Noto+Sans+KR:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <!-- Skip Link -->
-  <a href="#main-content" class="skip-link">본문으로 바로가기</a>
+    <div class="cursor"></div>
 
-  <!-- Grain Overlay -->
-  <div class="grain-overlay" aria-hidden="true"></div>
-
-  <!-- ===== NAV ===== -->
-  <header class="navbar" id="navbar" role="banner">
-    <nav class="nav-inner" aria-label="주 내비게이션">
-      <a href="#hero" class="nav-logo" id="nav-logo-link" aria-label="맑음 홈으로 이동">
-        <span class="logo-kr">맑음</span>
-        <span class="logo-en">Malgeum</span>
-      </a>
-      <ul class="nav-links" role="list">
-        <li><a href="#about" class="nav-link" id="nav-about">브랜드</a></li>
-        <li><a href="#linear" class="nav-link" id="nav-linear">리니어 (Linear)</a></li>
-        <li><a href="#tactile" class="nav-link" id="nav-tactile">넌클릭 (Tactile)</a></li>
-        <li><a href="#clicky" class="nav-link" id="nav-clicky">클릭 (Clicky)</a></li>
-        <li><a href="#silent" class="nav-link" id="nav-silent">저소음 (Silent)</a></li>
-        <li><a href="#progress" class="nav-link">진행상황</a></li>
-        <li><a href="#contact" class="nav-link nav-link--cta" id="nav-contact">사전 등록</a></li>
-        <li>
-          <div class="custom-dropdown" id="desktop-lang">
-            <button class="dropdown-toggle" aria-haspopup="listbox" aria-expanded="false">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
-              <span class="current-lang">한국어</span>
-              <svg class="chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
-            </button>
-            <ul class="dropdown-menu" role="listbox">
-              <li role="option" data-value="ko">한국어</li>
-              <li role="option" data-value="en">English</li>
-              <li role="option" data-value="zh">中文</li>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-content">
+            <a href="#" class="logo">
+                <span class="logo-kr">맑음</span>
+                <span class="logo-en">MALGEUM</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#keycaps">Keycaps</a></li>
+                <li><a href="#devlog">Dev Log</a></li>
             </ul>
-          </div>
-        </li>
-      </ul>
-      <button class="nav-toggle" id="navToggle" aria-label="메뉴 열기" aria-expanded="false" aria-controls="mobileMenu">
-        <span class="burger-bar"></span>
-        <span class="burger-bar"></span>
-        <span class="burger-bar"></span>
-      </button>
+            <a href="#hero" class="btn-primary nav-cta">알림 신청</a>
+        </div>
     </nav>
-    <!-- Mobile Menu -->
-    <div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="모바일 메뉴" aria-hidden="true">
-      <ul role="list">
-        <li><a href="#about" class="mobile-link" id="m-nav-about">브랜드</a></li>
-        <li><a href="#linear" class="mobile-link" id="m-nav-linear">리니어 (Linear)</a></li>
-        <li><a href="#tactile" class="mobile-link" id="m-nav-tactile">넌클릭 (Tactile)</a></li>
-        <li><a href="#clicky" class="mobile-link" id="m-nav-clicky">클릭 (Clicky)</a></li>
-        <li><a href="#silent" class="mobile-link" id="m-nav-silent">저소음 (Silent)</a></li>
-        <li><a href="#progress" class="mobile-link">진행상황</a></li>
-        <li><a href="#contact" class="mobile-link mobile-link--cta" id="m-nav-contact">사전 등록</a></li>
-        <li>
-          <div class="custom-dropdown" id="mobile-lang">
-            <button class="dropdown-toggle" aria-haspopup="listbox" aria-expanded="false">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
-              <span class="current-lang">한국어</span>
-              <svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
-            </button>
-            <ul class="dropdown-menu" role="listbox">
-              <li role="option" data-value="ko">한국어</li>
-              <li role="option" data-value="en">English</li>
-              <li role="option" data-value="zh">中文</li>
-            </ul>
-          </div>
-        </li>
-      </ul>
-    </div>
-  </header>
 
-  <main id="main-content">
-
-    <!-- ===== HERO ===== -->
-    <section class="hero" id="hero" aria-label="히어로 섹션">
-      <div class="hero-bg" aria-hidden="true">
-        <div class="hero-pattern"></div>
-        <div class="hero-glow hero-glow--jangsanbeom" aria-hidden="true"></div>
-        <div class="hero-glow hero-glow--omija" aria-hidden="true"></div>
-        <div class="hero-glow hero-glow--chamoe" aria-hidden="true"></div>
-        <div class="hero-glow hero-glow--hongsi" aria-hidden="true"></div>
-        <div class="hero-glow hero-glow--hallabong" aria-hidden="true"></div>
-        <div class="hero-glow hero-glow--hanbok" aria-hidden="true"></div>
-      </div>
-      <div class="hero-glow hero-glow--omija" aria-hidden="true"></div>
-      <div class="hero-glow hero-glow--chamoe" aria-hidden="true"></div>
-      <div class="hero-glow hero-glow--hongsi" aria-hidden="true"></div>
-      <div class="hero-glow hero-glow--hallabong" aria-hidden="true"></div>
-      <div class="hero-glow hero-glow--hanbok" aria-hidden="true"></div>
-      </div>
-
-      <div class="hero-content">
-        <p class="hero-eyebrow" data-reveal>한국의 감각</p>
-        <h1 class="hero-title" data-reveal data-reveal-delay="1">
-          <span class="hero-title-kr">맑음</span>
-          <span class="hero-title-en">Malgeum</span>
-        </h1>
-        <p class="hero-subtitle" data-reveal data-reveal-delay="2">
-          한국의 미감과 장인 정신으로 빚은<br />
-          키보드 스위치의 새로운 경험
-        </p>
-        <div class="hero-actions" data-reveal data-reveal-delay="3">
-          <a href="#linear" class="btn btn--outline" style="border-color: var(--border); color: var(--text);">
-            리니어 (Linear)
-            <span class="btn-arrow" aria-hidden="true">↓</span>
-          </a>
-          <a href="#tactile" class="btn btn--outline" style="border-color: var(--border); color: var(--text);">
-            넌클릭 (Tactile)
-            <span class="btn-arrow" aria-hidden="true">↓</span>
-          </a>
-          <a href="#clicky" class="btn btn--outline" style="border-color: var(--border); color: var(--text);">
-            클릭 (Clicky)
-            <span class="btn-arrow" aria-hidden="true">↓</span>
-          </a>
-          <a href="#silent" class="btn btn--outline" style="border-color: var(--border); color: var(--text);">
-            저소음 (Silent)
-            <span class="btn-arrow" aria-hidden="true">↓</span>
-          </a>
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="aurora-bg" id="auroraBg">
+            <div class="aurora-blob spring"></div>
+            <div class="aurora-blob summer"></div>
+            <div class="aurora-blob autumn"></div>
+            <div class="aurora-blob winter"></div>
         </div>
-      </div>
+        <div class="hero-overlay"></div>
 
+        <div class="hero-content">
+            <h1 class="hero-title">
+                당신의 손끝에 닿는<br>
+                한국의 사계절과 전설
+            </h1>
+            <p class="hero-subtitle">
+                가장 먼저 맑음의 사계절을 만나보세요.<br>
+                프리미엄 커스텀 스위치, <strong class="highlight">맑음(MALGEUM)</strong>
+            </p>
 
-
-
-      </div>
+            <div class="cta-container">
+                <button type="button" class="btn-primary open-modal-btn">텀블벅 얼리버드 혜택 알림 받기</button>
+            </div>
+        </div>
     </section>
 
-    <!-- ===== ABOUT ===== -->
-    <section class="about" id="about" aria-labelledby="about-title">
-      <div class="container">
-        <div class="about-grid">
-          <div class="about-text">
-            <p class="section-eyebrow" data-scroll-reveal>브랜드 스토리</p>
-            <h2 class="section-title" id="about-title" data-scroll-reveal>
-              맑고 깨끗한<br />
-              타이핑의 순간
-            </h2>
-            <p class="about-desc" data-scroll-reveal>
-              맑은 소리, 맑은 느낌, 맑은 울림—우리는 키보드 스위치에
-              한국 고유의 미감을 담고자 합니다.
-            </p>
-            <p class="about-desc" data-scroll-reveal>
-              한국의 전통 괴물 장산범, 영롱한 오미자차, 상큼한 참외와 한라봉,
-              그리고 단아한 한복까지—다채로운 한국의 미감과 질감을 모티브로
-              타이퍼의 손끝과 귀를 만족시킬 스위치를 기획하고 있습니다.
-            </p>
-            <div class="about-values" data-scroll-reveal>
-              <div class="value-item">
-                <div>
-                  <h3 class="value-title">한국 미감</h3>
-                  <p class="value-desc">전통에서 길어 올린 현대적 감성</p>
+    <!-- About Us Section -->
+    <section id="about" class="about section-padding">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-text" data-reveal>
+                    <span class="tag">Brand Story</span>
+                    <h2 class="section-heading">완벽한 타건감을 향한<br>맑음(MALGEUM)의 집념</h2>
+                    <p class="desc">
+                        우리는 하드웨어의 본질인 '입력의 즐거움'에 완벽히 집중하기 위해 프리미엄 커스텀 스위치 브랜드 <strong>'맑음(MALGEUM)'</strong>을 탄생시켰습니다.
+                    </p>
+                    <p class="desc">
+                        TTC, Kailh 등 글로벌 제조사의 수많은 샘플을 거치며, 한국의 사계절과 전통 요괴(전설)를 타건감과 소리로 구현해내기 위한 진정성 있는 연구를 거듭하고 있습니다.
+                    </p>
                 </div>
-              </div>
-              <div class="value-item">
-                <div>
-                  <h3 class="value-title">장인 정신</h3>
-                  <p class="value-desc">타협 없는 품질과 세밀한 조율</p>
+                <div class="about-visual" data-reveal>
+                    <div class="glass-panel about-panel">
+                        <div class="pulse-ring"></div>
+                        <p class="vision-text">"디지털 세계와 맞닿는 첫 순간,<br>그 촉감의 미학을 재정의하다."</p>
+                    </div>
                 </div>
-              </div>
-              <div class="value-item">
-                <div>
-                  <h3 class="value-title">감각적 타이핑</h3>
-                  <p class="value-desc">소리와 촉감으로 완성되는 경험</p>
-                </div>
-              </div>
             </div>
-          </div>
-          <div class="about-visual" data-scroll-reveal>
-            <div class="about-card" aria-label="브랜드 비주얼">
-              <div class="about-card-inner">
-                <div class="dancheong-pattern" aria-hidden="true">
-                  <div class="dp-circle dp-circle--1"></div>
-                  <div class="dp-circle dp-circle--2"></div>
-                  <div class="dp-circle dp-circle--3"></div>
+        </div>
+    </section>
+
+    <!-- Products (Switches) Section -->
+    <section id="products" class="products section-padding">
+        <div class="container">
+            <div class="section-header text-center" data-reveal>
+                <span class="tag">Switch Lineup</span>
+                <h2 class="section-heading">사계절, 그리고 요괴</h2>
+                <p>네 가지 계절의 감각을 손끝으로 경험하세요.</p>
+            </div>
+
+            <div class="switch-grid" data-reveal>
+                <!-- Spring: Maegu -->
+                <div class="switch-card glass-card spring-card">
+                    <div class="card-glow"></div>
+                    <div class="season-badge">🌸 봄 (매구)</div>
+                    <h3 class="switch-name">매구 스위치</h3>
+                    <p class="switch-trait">저키압 리니어</p>
+                    <div class="switch-desc">
+                        손가락에 무리가 없는 깃털 같은 가벼움.<br>
+                        파스텔 핑크 테마의 화사하고 부드러운 타건감을 선사합니다.
+                    </div>
+                    <div class="hover-element spring-floating"></div>
                 </div>
-                <p class="about-card-quote" lang="ko">
-                  "손끝에 닿는 한국의<br />
-                  맑은 감각"
+
+                <!-- Summer: Miri -->
+                <div class="switch-card glass-card summer-card">
+                    <div class="card-glow"></div>
+                    <div class="ripple-container"></div>
+                    <div class="season-badge">🌊 여름 (미리)</div>
+                    <h3 class="switch-name">미리 스위치</h3>
+                    <p class="switch-trait">경쾌한 클릭</p>
+                    <div class="switch-desc">
+                        파도처럼 퍼지는 시원하고 경쾌한 클릭음.<br>
+                        딥 블루 테마의 역동적인 톡톡 튀는 감각을 경험하세요.
+                    </div>
+                </div>
+
+                <!-- Autumn: Eoduksini -->
+                <div class="switch-card glass-card autumn-card">
+                    <div class="card-glow"></div>
+                    <div class="season-badge">🍁 가을 (어둑시니)</div>
+                    <h3 class="switch-name">어둑시니 스위치</h3>
+                    <p class="switch-trait">묵직한 넌클릭</p>
+                    <div class="switch-desc">
+                        촙촙/잘각잘각, 촉촉하고 작은 소리.<br>
+                        오렌지 브라운 테마의 묵직하고 중후한 매력을 느낄 수 있습니다.
+                    </div>
+                </div>
+
+                <!-- Winter: Jangsanbeom -->
+                <div class="switch-card glass-card winter-card">
+                    <div class="card-glow"></div>
+                    <div class="fog-overlay"></div>
+                    <div class="season-badge">❄️ 겨울 (장산범)</div>
+                    <h3 class="switch-name">장산범 스위치</h3>
+                    <p class="switch-trait">완벽한 무소음 리니어</p>
+                    <div class="switch-desc">
+                        반발력을 최소화하여 안개처럼 스며드는 타건감.<br>
+                        투명한 스카이 블루 테마의 극강의 고요함을 전합니다.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Point Keycaps Section -->
+    <section id="keycaps" class="keycaps section-padding">
+        <div class="container">
+            <div class="section-header text-center" data-reveal>
+                <span class="tag">Point Keycaps</span>
+                <h2 class="section-heading">포인트 키캡 에디션</h2>
+                <p>방향키를 위한 완벽한 대칭형 디자인. 스위치 테마에 맞춘 두 가지 에디션을 만나보세요.</p>
+            </div>
+
+            <div class="keycap-themes-wrapper" data-reveal>
+                <!-- 사계절 테마 -->
+                <div class="keycap-theme-group">
+                    <h3 class="theme-group-title">사계절(四季節) 에디션</h3>
+                    <div class="guardian-grid-container">
+                        <div class="guardian-grid">
+                            <div class="guardian-item top">
+                                <div class="keycap-mockup glass-card summer-theme">
+                                    <span class="guardian-icon">夏</span>
+                                    <span class="guardian-name">여름 (미리)</span>
+                                </div>
+                            </div>
+                            <div class="guardian-item left">
+                                <div class="keycap-mockup glass-card spring-theme">
+                                    <span class="guardian-icon">春</span>
+                                    <span class="guardian-name">봄 (매구)</span>
+                                </div>
+                            </div>
+                            <div class="guardian-item center">
+                                <div class="core-element"></div>
+                            </div>
+                            <div class="guardian-item right">
+                                <div class="keycap-mockup glass-card autumn-theme">
+                                    <span class="guardian-icon">秋</span>
+                                    <span class="guardian-name">가을 (어둑시니)</span>
+                                </div>
+                            </div>
+                            <div class="guardian-item bottom">
+                                <div class="keycap-mockup glass-card winter-theme">
+                                    <span class="guardian-icon">冬</span>
+                                    <span class="guardian-name">겨울 (장산범)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 사방신 테마 -->
+                <div class="keycap-theme-group">
+                    <h3 class="theme-group-title">사방신(四神) 에디션</h3>
+                    <div class="guardian-grid-container">
+                        <div class="guardian-grid">
+                            <div class="guardian-item top">
+                                <div class="keycap-mockup glass-card summer-theme">
+                                    <span class="guardian-icon">朱雀</span>
+                                    <span class="guardian-name">주작</span>
+                                </div>
+                            </div>
+                            <div class="guardian-item left">
+                                <div class="keycap-mockup glass-card spring-theme">
+                                    <span class="guardian-icon">靑龍</span>
+                                    <span class="guardian-name">청룡</span>
+                                </div>
+                            </div>
+                            <div class="guardian-item center">
+                                <div class="core-element"></div>
+                            </div>
+                            <div class="guardian-item right">
+                                <div class="keycap-mockup glass-card autumn-theme">
+                                    <span class="guardian-icon">白虎</span>
+                                    <span class="guardian-name">백호</span>
+                                </div>
+                            </div>
+                            <div class="guardian-item bottom">
+                                <div class="keycap-mockup glass-card winter-theme">
+                                    <span class="guardian-icon">玄武</span>
+                                    <span class="guardian-name">현무</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center bundle-notice" data-reveal>
+                * 스위치 + 키캡 번들 패키지가 곧 공개됩니다.
+            </div>
+        </div>
+    </section>
+
+    <!-- Dev Log Section -->
+    <section id="devlog" class="devlog section-padding">
+        <div class="container">
+            <div class="devlog-wrapper glass-panel" data-reveal>
+                <div class="devlog-content">
+                    <span class="tag">개발 노트</span>
+                    <h2 class="section-heading">타건음 및 스프링 압력 조정 중</h2>
+                    <p>현재 최적의 타건감을 위해 제조사와 스프링 및 키압을 세밀하게 조율하고 있습니다.<br>타건 테스트 영상이 곧 업로드될 예정입니다.</p>
+                    <div class="status-bar">
+                        <div class="status-progress"></div>
+                    </div>
+                    <p class="status-text">Test in progress...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-cta text-center" data-reveal>
+                <h2 class="section-heading">맑음의 여정에 함께해주세요</h2>
+                <p>가장 먼저 맑음을 만나보실 수 있도록 알림을 보내드립니다.</p>
+                <div class="bottom-form">
+                    <button type="button" class="btn-primary open-modal-btn">사전 알림 신청</button>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-brand">
+                    <span class="logo-kr">맑음</span>
+                    <p>&copy; 2026 MALGEUM. All rights reserved.</p>
+                </div>
+                <div class="social-links">
+                    <a href="#" class="social-icon">YouTube</a>
+                    <a href="#" class="social-icon">Tumblbug</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Pre-order Modal -->
+    <div class="modal-overlay" id="preorderModal">
+        <div class="modal-container glass-panel text-center">
+            <button class="modal-close" id="closeModal">&times;</button>
+            <div style="padding: 40px 10px;">
+                <h2 class="modal-title" style="margin-bottom: 24px;">사전 예약 오픈 예정</h2>
+                <p class="modal-desc" style="font-size: 1.1rem; line-height: 1.8;">
+                    텀블벅 사전 예약 및 알림 신청 기능은<br>
+                    <strong style="color: #fff;">추후 상세 일정과 함께 공개될 예정입니다.</strong><br><br>
+                    조금만 더 기다려 주세요!<br>많은 기대와 관심 부탁드립니다.
                 </p>
-                <p class="about-card-sub">淸音 · 清感 · 맑음</p>
-              </div>
+                <button type="button" class="btn-primary" id="modalOkBtn" style="margin-top: 32px; padding: 12px 40px;">확인</button>
             </div>
-          </div>
         </div>
-      </div>
-    </section>
-
-
-
-    <!-- ===== CATEGORY: 리니어 (Linear) ===== -->
-    <section class="category-section" id="linear">
-      <div class="category-header">
-        <h2 class="category-title" data-scroll-reveal>리니어 (Linear)</h2>
-        <p class="category-desc" data-scroll-reveal>부드럽고 걸림 없는 타건감</p>
-      </div>
-
-      <!-- ===== JANGSANBEOM SECTION ===== -->
-      <div class="switch-section switch-section--jangsanbeom" aria-labelledby="jangsanbeom-title">
-        <div class="switch-bg" aria-hidden="true">
-          <div class="switch-glow switch-glow--jangsanbeom"></div>
-        </div>
-        <div class="container">
-          <div class="switch-editorial-grid">
-            <div class="switch-text-primary" data-scroll-reveal>
-              <p class="section-eyebrow section-eyebrow--jangsanbeom">백색 (오방색) · 장산범 축</p>
-              <h2 class="section-title" id="jangsanbeom-title">
-                깃털처럼 가볍게,<br /><em>홀리는 반발력</em>
-              </h2>
-              <p class="switch-desc">
-                깃털처럼 가볍게 눌리지만 롱 스프링의 강력한 반발력으로<br />손 끝에 달라붙는 홀림을 선사합니다.
-              </p>
-              <div class="btn-group">
-                <a href="#contact" class="btn btn--jangsanbeom btn--outline" id="jangsanbeom-notify-btn">
-                  출시 알림 받기
-                  <span class="btn-arrow" aria-hidden="true">→</span>
-                </a>
-              </div>
-            </div>
-
-            <div class="switch-specs-secondary" data-scroll-reveal>
-              <div class="specs-header">
-                <h3 class="specs-title">Technical Specs</h3>
-                <div class="specs-line"></div>
-              </div>
-              <div class="switch-features">
-                <div class="feature-row">
-                  <div class="feature-label">방식</div>
-                  <div class="feature-value">리니어 (Linear)</div>
-                </div>
-                <div class="feature-row">
-                  <div class="feature-label">키압</div>
-                  <div class="feature-value">35g ~ 40g</div>
-                </div>
-                <div class="feature-row">
-                  <div class="feature-label">하우징</div>
-                  <div class="feature-value">밀키 화이트 (불투명)</div>
-                </div>
-                <div class="feature-row">
-                  <div class="feature-label">스템</div>
-                  <div class="feature-value">아이스 블루 / 버건디</div>
-                </div>
-                <div class="feature-row">
-                  <div class="feature-label">상태</div>
-                  <div class="feature-value feature-value--badge">기획 중</div>
-                </div>
-              </div>
-
-              <div class="switch-vibe" aria-label="장산범 축의 감성">
-                <div class="vibe-bar">
-                  <span class="vibe-label">가벼움</span>
-                  <div class="vibe-track" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">
-                    <div class="vibe-fill vibe-fill--jangsanbeom" style="--pct: 95%"></div>
-                  </div>
-                  <span class="vibe-num">95</span>
-                </div>
-                <div class="vibe-bar">
-                  <span class="vibe-label">반발력</span>
-                  <div class="vibe-track" role="progressbar" aria-valuenow="98" aria-valuemin="0" aria-valuemax="100">
-                    <div class="vibe-fill vibe-fill--jangsanbeom" style="--pct: 98%"></div>
-                  </div>
-                  <span class="vibe-num">98</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- ===== OMIJA SECTION ===== -->
-      <div class="switch-section switch-section--omija" aria-labelledby="omija-title">
-        <div class="switch-bg" aria-hidden="true">
-          <div class="switch-glow switch-glow--omija"></div>
-        </div>
-        <div class="container">
-          <div class="switch-editorial-grid switch-editorial-grid--reverse">
-            <div class="switch-text-primary" data-scroll-reveal>
-              <p class="section-eyebrow section-eyebrow--omija">적색 (오방색) · 오미자 축</p>
-              <h2 class="section-title" id="omija-title">
-                맑고 영롱하게,<br /><em>투명한 루비 레드</em>
-              </h2>
-              <p class="switch-desc">
-                오미자차의 영롱함을 시각화한 투명 하우징.<br />잡소리 없이 맑고 매끄러운, 서걱임 없는 타건감을 경험해 보세요.
-              </p>
-              <div class="btn-group">
-                <a href="#contact" class="btn btn--omija btn--outline" id="omija-notify-btn">
-                  출시 알림 받기
-                  <span class="btn-arrow" aria-hidden="true">→</span>
-                </a>
-              </div>
-            </div>
-
-            <div class="switch-specs-secondary" data-scroll-reveal>
-              <div class="specs-header">
-                <h3 class="specs-title">Technical Specs</h3>
-                <div class="specs-line"></div>
-              </div>
-              <div class="switch-features">
-                <div class="feature-row">
-                  <div class="feature-label">방식</div>
-                  <div class="feature-value">리니어 (Linear)</div>
-                </div>
-                <div class="feature-row">
-                  <div class="feature-label">키압</div>
-                  <div class="feature-value">45g</div>
-                </div>
-                <div class="feature-row">
-                  <div class="feature-label">하우징</div>
-                  <div class="feature-value">투명 루비 레드 (PC)</div>
-                </div>
-                <div class="feature-row">
-                  <div class="feature-label">스템</div>
-                  <div class="feature-value">투명 핑크</div>
-                </div>
-                <div class="feature-row">
-                  <div class="feature-label">상태</div>
-                  <div class="feature-value feature-value--badge">기획 중</div>
-                </div>
-              </div>
-
-              <div class="switch-vibe" aria-label="오미자 축의 감성">
-                <div class="vibe-bar">
-                  <span class="vibe-label">매끄러움</span>
-                  <div class="vibe-track" role="progressbar" aria-valuenow="96" aria-valuemin="0" aria-valuemax="100">
-                    <div class="vibe-fill vibe-fill--omija" style="--pct: 96%"></div>
-                  </div>
-                  <span class="vibe-num">96</span>
-                </div>
-                <div class="vibe-bar">
-                  <span class="vibe-label">영롱함</span>
-                  <div class="vibe-track" role="progressbar" aria-valuenow="99" aria-valuemin="0" aria-valuemax="100">
-                    <div class="vibe-fill vibe-fill--omija" style="--pct: 99%"></div>
-                  </div>
-                  <span class="vibe-num">99</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </section>
-
-    <!-- ===== CATEGORY: 클릭 (Clicky) ===== -->
-    <section class="category-section" id="clicky">
-      <div class="category-header">
-        <h2 class="category-title" data-scroll-reveal>클릭 (Clicky)</h2>
-        <p class="category-desc" data-scroll-reveal>경쾌하고 확실한 클릭음</p>
-      </div>
-
-      <!-- ===== CHAMOE SECTION ===== -->
-      <div class="switch-section switch-section--chamoe" aria-labelledby="chamoe-title">
-        <div class="switch-bg" aria-hidden="true">
-          <div class="switch-glow switch-glow--chamoe"></div>
-        </div>
-        <div class="container">
-          <div class="switch-editorial-grid">
-            <div class="switch-text-primary" data-scroll-reveal>
-              <p class="section-eyebrow section-eyebrow--chamoe">황색 (오방색) · 참외 축</p>
-              <h2 class="section-title" id="chamoe-title">
-                아삭하고 경쾌하게,<br /><em>선명한 옐로우</em>
-              </h2>
-              <p class="switch-desc">
-                참외를 한 입 베어 물 때의 아삭함과 경쾌한 소리를<br />그대로 옮겨온 맑은 하이피치 클릭음입니다.
-              </p>
-              <div class="btn-group">
-                <a href="#contact" class="btn btn--chamoe btn--outline" id="chamoe-notify-btn">
-                  출시 알림 받기
-                  <span class="btn-arrow" aria-hidden="true">→</span>
-                </a>
-              </div>
-            </div>
-
-            <div class="switch-specs-secondary" data-scroll-reveal>
-              <div class="specs-header">
-                <h3 class="specs-title">Technical Specs</h3>
-                <div class="specs-line"></div>
-              </div>
-              <div class="switch-features">
-                <div class="feature-row">
-                  <div class="feature-label">방식</div>
-                  <div class="feature-value">클릭 (Clicky)</div>
-                </div>
-                <div class="feature-row">
-                  <div class="feature-label">키압</div>
-                  <div class="feature-value">50g</div>
-                </div>
-                <div class="feature-row">
-                  <div class="feature-label">하우징</div>
-                  <div class="feature-value">선명한 옐로우</div>
-                </div>
-                <div class="feature-row">
-                  <div class="feature-label">스템</div>
-                  <div class="feature-value">퓨어 화이트</div>
-                </div>
-                <div class="feature-row">
-                  <div class="feature-label">상태</div>
-                  <div class="feature-value feature-value--badge">제조사 샘플 대기 중</div>
-                </div>
-              </div>
-
-              <div class="switch-vibe" aria-label="참외 축의 감성">
-                <div class="vibe-bar">
-                  <span class="vibe-label">경쾌함</span>
-                  <div class="vibe-track" role="progressbar" aria-valuenow="98" aria-valuemin="0" aria-valuemax="100">
-                    <div class="vibe-fill vibe-fill--chamoe" style="--pct: 98%"></div>
-                  </div>
-                  <span class="vibe-num">98</span>
-                </div>
-                <div class="vibe-bar">
-                  <span class="vibe-label">아삭함</span>
-                  <div class="vibe-track" role="progressbar" aria-valuenow="97" aria-valuemin="0" aria-valuemax="100">
-                    <div class="vibe-fill vibe-fill--chamoe" style="--pct: 97%"></div>
-                  </div>
-                  <span class="vibe-num">97</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </section>
-
-    <!-- ===== CATEGORY: 넌클릭 (Tactile) ===== -->
-    <section class="category-section" id="tactile">
-      <div class="category-header">
-        <h2 class="category-title" data-scroll-reveal>넌클릭 (Tactile)</h2>
-        <p class="category-desc" data-scroll-reveal>묵직하고 부드러운 걸림</p>
-      </div>
-
-      <!-- ===== HONGSI SECTION ===== -->
-      <div class="switch-section switch-section--hongsi" aria-labelledby="hongsi-title">
-        <div class="switch-bg" aria-hidden="true">
-          <div class="switch-glow switch-glow--hongsi"></div>
-        </div>
-        <div class="container">
-          <div class="switch-editorial-grid">
-            <div class="switch-text-primary" data-scroll-reveal>
-              <p class="section-eyebrow section-eyebrow--hongsi">홍색 (오간색) · 홍시 축</p>
-              <h2 class="section-title" id="hongsi-title">
-                쫀득하고 묵직하게,<br /><em>딥 코랄 오렌지</em>
-              </h2>
-              <p class="switch-desc">
-                홍시의 쫀득하고 말랑한 질감을 담아,<br />묵직하고 확실한 걸림 뒤에 오는 부드러운 반발력이 일품입니다.
-              </p>
-              <div class="btn-group">
-                <a href="#contact" class="btn btn--hongsi btn--outline" id="hongsi-notify-btn">
-                  출시 알림 받기
-                  <span class="btn-arrow" aria-hidden="true">→</span>
-                </a>
-              </div>
-            </div>
-
-            <div class="switch-specs-secondary" data-scroll-reveal>
-              <div class="specs-header">
-                <h3 class="specs-title">Technical Specs</h3>
-                <div class="specs-line"></div>
-              </div>
-              <div class="switch-features">
-                <div class="feature-row">
-                  <div class="feature-label">방식</div>
-                  <div class="feature-value">넌클릭 (Tactile)</div>
-                </div>
-                <div class="feature-row">
-                  <div class="feature-label">키압</div>
-                  <div class="feature-value">60g</div>
-                </div>
-                <div class="feature-row">
-                  <div class="feature-label">하우징</div>
-                  <div class="feature-value">딥 코랄 오렌지</div>
-                </div>
-                <div class="feature-row">
-                  <div class="feature-label">스템</div>
-                  <div class="feature-value">소프트 오렌지</div>
-                </div>
-                <div class="feature-row">
-                  <div class="feature-label">상태</div>
-                  <div class="feature-value feature-value--badge">기획 중</div>
-                </div>
-              </div>
-
-              <div class="switch-vibe" aria-label="홍시 축의 감성">
-                <div class="vibe-bar">
-                  <span class="vibe-label">쫀득함</span>
-                  <div class="vibe-track" role="progressbar" aria-valuenow="99" aria-valuemin="0" aria-valuemax="100">
-                    <div class="vibe-fill vibe-fill--hongsi" style="--pct: 99%"></div>
-                  </div>
-                  <span class="vibe-num">99</span>
-                </div>
-                <div class="vibe-bar">
-                  <span class="vibe-label">묵직함</span>
-                  <div class="vibe-track" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">
-                    <div class="vibe-fill vibe-fill--hongsi" style="--pct: 95%"></div>
-                  </div>
-                  <span class="vibe-num">95</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- ===== HALLABONG SECTION ===== -->
-      <div class="switch-section switch-section--hallabong" aria-labelledby="hallabong-title">
-        <div class="switch-bg" aria-hidden="true">
-          <div class="switch-glow switch-glow--hallabong"></div>
-        </div>
-        <div class="container">
-          <div class="switch-editorial-grid switch-editorial-grid--reverse">
-            <div class="switch-text-primary" data-scroll-reveal>
-              <p class="section-eyebrow section-eyebrow--hallabong">유황색 (오간색) · 한라봉 축</p>
-              <h2 class="section-title" id="hallabong-title">
-                상큼하고 톡톡 튀는,<br /><em>비비드 오렌지</em>
-              </h2>
-              <p class="switch-desc">
-                한라봉의 상큼함을 담은 가볍고 경쾌한 걸림.<br />스템 끝에 초록색 포인트를 주어 싱그러운 색감을 강조했습니다.
-              </p>
-              <div class="btn-group">
-                <a href="#contact" class="btn btn--hallabong btn--outline" id="hallabong-notify-btn">
-                  출시 알림 받기
-                  <span class="btn-arrow" aria-hidden="true">→</span>
-                </a>
-              </div>
-            </div>
-
-            <div class="switch-specs-secondary" data-scroll-reveal>
-              <div class="specs-header">
-                <h3 class="specs-title">Technical Specs</h3>
-                <div class="specs-line"></div>
-              </div>
-              <div class="switch-features">
-                <div class="feature-row">
-                  <div class="feature-label">방식</div>
-                  <div class="feature-value">넌클릭 (Tactile)</div>
-                </div>
-                <div class="feature-row">
-                  <div class="feature-label">키압</div>
-                  <div class="feature-value">45g</div>
-                </div>
-                <div class="feature-row">
-                  <div class="feature-label">하우징</div>
-                  <div class="feature-value">비비드 오렌지</div>
-                </div>
-                <div class="feature-row">
-                  <div class="feature-label">스템</div>
-                  <div class="feature-value">리프 그린</div>
-                </div>
-                <div class="feature-row">
-                  <div class="feature-label">상태</div>
-                  <div class="feature-value feature-value--badge">기획 중</div>
-                </div>
-              </div>
-
-              <div class="switch-vibe" aria-label="한라봉 축의 감성">
-                <div class="vibe-bar">
-                  <span class="vibe-label">상큼함</span>
-                  <div class="vibe-track" role="progressbar" aria-valuenow="96" aria-valuemin="0" aria-valuemax="100">
-                    <div class="vibe-fill vibe-fill--hallabong" style="--pct: 96%"></div>
-                  </div>
-                  <span class="vibe-num">96</span>
-                </div>
-                <div class="vibe-bar">
-                  <span class="vibe-label">경쾌함</span>
-                  <div class="vibe-track" role="progressbar" aria-valuenow="94" aria-valuemin="0" aria-valuemax="100">
-                    <div class="vibe-fill vibe-fill--hallabong" style="--pct: 94%"></div>
-                  </div>
-                  <span class="vibe-num">94</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </section>
-
-    <!-- ===== CATEGORY: 저소음 (Silent) ===== -->
-    <section class="category-section" id="silent">
-      <div class="category-header">
-        <h2 class="category-title" data-scroll-reveal>저소음 (Silent)</h2>
-        <p class="category-desc" data-scroll-reveal>도서관에서도 조용한 정숙성</p>
-      </div>
-
-      <!-- ===== HANBOK SECTION ===== -->
-      <div class="switch-section switch-section--hanbok" aria-labelledby="hanbok-title">
-        <div class="switch-bg" aria-hidden="true">
-          <div class="switch-glow switch-glow--hanbok"></div>
-        </div>
-        <div class="container">
-          <div class="switch-editorial-grid">
-            <div class="switch-text-primary" data-scroll-reveal>
-              <p class="section-eyebrow section-eyebrow--hanbok">청색 (오방색) · 한복 축</p>
-              <h2 class="section-title" id="hanbok-title">
-                우아하고 정갈하게,<br /><em>딥 인디고</em>
-              </h2>
-              <p class="switch-desc">
-                한복의 우아함과 정갈함을 상징하는 저소음 스위치.<br />도서관에서도 사용 가능한 수준의 극강의 저소음과 정갈한 촉감입니다.
-              </p>
-              <div class="btn-group">
-                <a href="#contact" class="btn btn--hanbok btn--outline" id="hanbok-notify-btn">
-                  출시 알림 받기
-                  <span class="btn-arrow" aria-hidden="true">→</span>
-                </a>
-              </div>
-            </div>
-
-            <div class="switch-specs-secondary" data-scroll-reveal>
-              <div class="specs-header">
-                <h3 class="specs-title">Technical Specs</h3>
-                <div class="specs-line"></div>
-              </div>
-              <div class="switch-features">
-                <div class="feature-row">
-                  <div class="feature-label">방식</div>
-                  <div class="feature-value">저소음 넌클릭</div>
-                </div>
-                <div class="feature-row">
-                  <div class="feature-label">키압</div>
-                  <div class="feature-value">50g</div>
-                </div>
-                <div class="feature-row">
-                  <div class="feature-label">하우징</div>
-                  <div class="feature-value">딥 인디고 / 비단색</div>
-                </div>
-                <div class="feature-row">
-                  <div class="feature-label">스템</div>
-                  <div class="feature-value">실크 화이트</div>
-                </div>
-                <div class="feature-row">
-                  <div class="feature-label">상태</div>
-                  <div class="feature-value feature-value--badge">제조사 샘플 대기 중</div>
-                </div>
-              </div>
-
-              <div class="switch-vibe" aria-label="한복 축의 감성">
-                <div class="vibe-bar">
-                  <span class="vibe-label">정숙성</span>
-                  <div class="vibe-track" role="progressbar" aria-valuenow="99" aria-valuemin="0" aria-valuemax="100">
-                    <div class="vibe-fill vibe-fill--hanbok" style="--pct: 99%"></div>
-                  </div>
-                  <span class="vibe-num">99</span>
-                </div>
-                <div class="vibe-bar">
-                  <span class="vibe-label">정갈함</span>
-                  <div class="vibe-track" role="progressbar" aria-valuenow="97" aria-valuemin="0" aria-valuemax="100">
-                    <div class="vibe-fill vibe-fill--hanbok" style="--pct: 97%"></div>
-                  </div>
-                  <span class="vibe-num">97</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </section>
-
-    <!-- ===== PROGRESS ===== -->
-    <section class="progress" id="progress" aria-labelledby="progress-title">
-      <div class="container">
-        <div class="progress-header">
-          <p class="section-eyebrow" data-scroll-reveal>현재 진행 상황</p>
-          <h2 class="section-title" id="progress-title" data-scroll-reveal>
-            스위치가 당신의 손끝에<br />
-            <em>닿기까지의 여정</em>
-          </h2>
-        </div>
-
-        <div class="progress-grid" data-scroll-reveal>
-          <!-- Planning phase -->
-          <div class="progress-card">
-            <div class="progress-icon" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round">
-                <path d="M12 19l7-7 3 3-7 7-3-3z" />
-                <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z" />
-                <path d="M2 2l7.586 7.586" />
-                <circle cx="11" cy="11" r="2" />
-              </svg>
-            </div>
-            <h3 class="progress-card-title">기획 및 디자인 단계</h3>
-            <p class="progress-card-desc">스위치의 소재, 컬러 배합, 그리고 타건감의 컨셉을 기획합니다.</p>
-            <ul class="progress-list">
-              <li><span class="status-dot status-dot--planning"></span> 장산범 축</li>
-              <li><span class="status-dot status-dot--planning"></span> 오미자 축</li>
-              <li><span class="status-dot status-dot--planning"></span> 홍시 축</li>
-              <li><span class="status-dot status-dot--planning"></span> 한라봉 축</li>
-            </ul>
-          </div>
-
-          <!-- Sampling phase -->
-          <div class="progress-card progress-card--active">
-            <div class="progress-icon" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="3"></circle>
-                <path
-                  d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z">
-                </path>
-              </svg>
-            </div>
-            <h3 class="progress-card-title">제조사 샘플링 <span class="badge badge--active">진행 중</span></h3>
-            <p class="progress-card-desc">글로벌 제조사(TTC, Kailh 등)와 컨택하여 금형 및 타건감을 테스트하는 샘플을 대기 중입니다.</p>
-            <ul class="progress-list">
-              <li><span class="status-dot status-dot--sampling"></span> 참외 축 (TTC, Kailh 대기중)</li>
-              <li><span class="status-dot status-dot--sampling"></span> 한복 축 (TTC, Kailh 대기중)</li>
-            </ul>
-          </div>
-
-          <!-- Production phase -->
-          <div class="progress-card progress-card--locked">
-            <div class="progress-icon" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round">
-                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                <polyline points="22 4 12 14.01 9 11.01"></polyline>
-              </svg>
-            </div>
-            <h3 class="progress-card-title">양산 및 프리오더</h3>
-            <p class="progress-card-desc">최종 승인을 거쳐 대량 생산을 시작하고 프리오더를 오픈합니다.</p>
-            <div class="progress-empty">준비 중</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== DIVIDER ===== -->
-    <div class="section-divider" aria-hidden="true">
-      <div class="divider-text">맑음 · MALGEUM · 맑음 · MALGEUM · 맑음 · MALGEUM · 맑음 · MALGEUM · 맑음 · MALGEUM · 맑음 · MALGEUM
-        · 맑음 · MALGEUM · 맑음 · MALGEUM · 맑음 · MALGEUM · 맑음 · MALGEUM · 맑음 · MALGEUM · 맑음 · MALGEUM · 맑음 · MALGEUM · 맑음 ·
-        MALGEUM · 맑음 · MALGEUM · 맑음 · MALGEUM · 맑음 · MALGEUM · 맑음 · MALGEUM · 맑음 · MALGEUM · 맑음 · MALGEUM · 맑음 · MALGEUM
-        · 맑음 · MALGEUM · 맑음 · MALGEUM · 맑음 · MALGEUM · 맑음 · MALGEUM · 맑음 · MALGEUM · 맑음 · MALGEUM · 맑음 · MALGEUM · 맑음 ·
-        MALGEUM · 맑음 · MALGEUM · 맑음 · MALGEUM · 맑음 · MALGEUM · 맑음 · MALGEUM · 맑음 · MALGEUM · 맑음 · MALGEUM · 맑음 · MALGEUM
-        · 맑음 · MALGEUM · 맑음 · MALGEUM · 맑음 · MALGEUM · 맑음 · MALGEUM · </div>
     </div>
 
-    <!-- ===== CONTACT ===== -->
-    <section class="contact" id="contact" aria-labelledby="contact-title">
-      <div class="container">
-        <div class="contact-inner">
-          <p class="section-eyebrow" data-scroll-reveal>사전 등록</p>
-          <h2 class="section-title contact-title" id="contact-title" data-scroll-reveal>
-            맑음의 첫 번째<br />
-            소식을 받아보세요
-          </h2>
-          <p class="contact-desc" data-scroll-reveal>
-            맑음 스위치의 출시 소식, 프리오더 정보를 가장 먼저 전달해 드립니다.
-          </p>
-
-          <form class="contact-form" id="contactForm" data-scroll-reveal novalidate aria-label="사전 등록 폼">
-            <div class="form-group">
-              <label for="email-input" class="form-label">이메일 주소 <span class="required"
-                  aria-hidden="true">*</span></label>
-              <div class="form-input-wrap">
-                <input type="email" id="email-input" name="email" class="form-input" placeholder="your@email.com"
-                  required autocomplete="email" aria-required="true" aria-describedby="email-error" />
-                <div class="form-input-icon" aria-hidden="true">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-                    <polyline points="22,6 12,13 2,6" />
-                  </svg>
-                </div>
-              </div>
-              <span class="form-error" id="email-error" role="alert" aria-live="polite"></span>
-            </div>
-            <div class="form-group">
-              <label for="name-input" class="form-label">이름 (수령인) <span class="required" aria-hidden="true">*</span></label>
-              <div class="form-input-wrap">
-                <input type="text" id="name-input" name="name" class="form-input" placeholder="홍길동" required aria-required="true" />
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label for="phone-input" class="form-label">연락처 <span class="required" aria-hidden="true">*</span></label>
-              <div class="form-input-wrap">
-                <input type="tel" id="phone-input" name="phone" class="form-input" placeholder="010-1234-5678" required aria-required="true" />
-              </div>
-            </div>
-
-            <div class="form-group" style="display: flex; gap: 1rem;">
-              <div style="flex: 1;">
-                <label for="zipcode-input" class="form-label">우편번호 <span class="required" aria-hidden="true">*</span></label>
-                <div class="form-input-wrap">
-                  <input type="text" id="zipcode-input" name="zipcode" class="form-input" placeholder="12345" required aria-required="true" />
-                </div>
-              </div>
-              <div style="flex: 2;">
-                <label for="address-input" class="form-label">기본/상세주소 <span class="required" aria-hidden="true">*</span></label>
-                <div class="form-input-wrap">
-                  <input type="text" id="address-input" name="address" class="form-input" placeholder="00로 00, 00동 00호" required aria-required="true" />
-                </div>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <fieldset class="switch-interest">
-                <legend class="form-label">관심 있는 스위치</legend>
-                <div class="radio-group" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.75rem;">
-                  <label class="radio-label" for="interest-jangsanbeom">
-                    <input type="checkbox" id="interest-jangsanbeom" name="interest" value="jangsanbeom"
-                      class="radio-input" />
-                    <span class="radio-custom radio-custom--jangsanbeom" aria-hidden="true"></span>
-                    <span>장산범 축</span>
-                  </label>
-                  <label class="radio-label" for="interest-omija">
-                    <input type="checkbox" id="interest-omija" name="interest" value="omija" class="radio-input" />
-                    <span class="radio-custom radio-custom--omija" aria-hidden="true"></span>
-                    <span>오미자 축</span>
-                  </label>
-                  <label class="radio-label" for="interest-chamoe">
-                    <input type="checkbox" id="interest-chamoe" name="interest" value="chamoe" class="radio-input" />
-                    <span class="radio-custom radio-custom--chamoe" aria-hidden="true"></span>
-                    <span>참외 축</span>
-                  </label>
-                  <label class="radio-label" for="interest-hongsi">
-                    <input type="checkbox" id="interest-hongsi" name="interest" value="hongsi" class="radio-input" />
-                    <span class="radio-custom radio-custom--hongsi" aria-hidden="true"></span>
-                    <span>홍시 축</span>
-                  </label>
-                  <label class="radio-label" for="interest-hallabong">
-                    <input type="checkbox" id="interest-hallabong" name="interest" value="hallabong"
-                      class="radio-input" />
-                    <span class="radio-custom radio-custom--hallabong" aria-hidden="true"></span>
-                    <span>한라봉 축</span>
-                  </label>
-                  <label class="radio-label" for="interest-hanbok">
-                    <input type="checkbox" id="interest-hanbok" name="interest" value="hanbok" class="radio-input" />
-                    <span class="radio-custom radio-custom--hanbok" aria-hidden="true"></span>
-                    <span>한복 축</span>
-                  </label>
-                </div>
-              </fieldset>
-            </div>
-
-            <div class="form-group">
-              <label for="quantity-input" class="form-label">희망 수량 <span class="required" aria-hidden="true">*</span></label>
-              <div class="form-input-wrap">
-                <input type="text" id="quantity-input" name="quantity" class="form-input" placeholder="예: 장산범 90개, 오미자 110개" required aria-required="true" />
-              </div>
-            </div>
-
-            <div class="form-group" style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border);">
-              <label style="display: flex; gap: 0.75rem; align-items: flex-start; cursor: pointer;">
-                <input type="checkbox" id="privacy-input" name="privacy" required style="margin-top: 0.25rem; width: 1.2rem; height: 1.2rem; accent-color: var(--text);" />
-                <span style="font-size: 0.85rem; line-height: 1.5; color: var(--text-muted);">
-                  <strong>개인정보 수집 및 이용에 동의합니다. (필수)</strong><br>
-                  수집 목적: 사전 예약 상품 배송 및 안내<br>
-                  수집 항목: 이름, 연락처, 배송지 주소, 이메일<br>
-                  보유 기간: 배송 완료 후 즉시 파기
-                </span>
-              </label>
-            </div>
-
-            <button type="submit" class="btn btn--submit" id="submit-btn" aria-describedby="submit-feedback">
-              <span class="btn-text">사전 등록하기</span>
-              <span class="btn-loading" aria-hidden="true">등록 중…</span>
-              <span class="btn-arrow" aria-hidden="true">→</span>
-            </button>
-            <p class="form-note" id="submit-feedback">개인정보는 출시 알림 목적으로만 사용됩니다.</p>
-          </form>
-
-          <div class="contact-success" id="contactSuccess" role="status" aria-live="polite" aria-hidden="true">
-            <div class="success-icon" aria-hidden="true">
-              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
-                <polyline points="22 4 12 14.01 9 11.01" />
-              </svg>
-            </div>
-            <h3 class="success-title">등록 완료!</h3>
-            <p class="success-desc">맑음의 첫 소식을 이메일로 전달드리겠습니다.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- ===== FOOTER ===== -->
-  <footer class="footer" role="contentinfo">
-    <div class="container">
-      <div class="footer-inner">
-        <div class="footer-brand">
-          <span class="footer-logo-kr">맑음</span>
-          <span class="footer-logo-en">Malgeum</span>
-          <p class="footer-tagline">한국의 감각으로 만든 키보드 스위치</p>
-        </div>
-        <div class="footer-links">
-          <a href="#about" class="footer-link" id="f-about">브랜드</a>
-          <a href="#kimchi" class="footer-link" id="f-kimchi">김치축</a>
-          <a href="#hanbok" class="footer-link" id="f-hanbok">한복축</a>
-          <a href="#contact" class="footer-link" id="f-contact">사전 등록</a>
-        </div>
-        <p class="footer-copy">
-          © 2026 맑음 (Malgeum). All rights reserved.
-        </p>
-      </div>
-    </div>
-  </footer>
-
-  <script src="i18n.js"></script>
-  <script src="main.js"></script>
+    <script src="main.js"></script>
 </body>
-
 </html>

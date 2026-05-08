@@ -1,196 +1,150 @@
-/* ===== MALGEUM — main.js ===== */
-
-// Initialize Lenis Smooth Scroll
-const lenis = new Lenis({
-  duration: 1.5,
-  easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // 부드러운 가감속
-  direction: 'vertical',
-  gestureDirection: 'vertical',
-  smooth: true,
-  mouseMultiplier: 1,
-  smoothTouch: false,
-  touchMultiplier: 2,
-  infinite: false,
-});
-
-function raf(time) {
-  lenis.raf(time);
-  requestAnimationFrame(raf);
-}
-
-requestAnimationFrame(raf);
-
-// Smooth scrolling for anchor links using Lenis
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    const targetId = this.getAttribute('href');
-    if (targetId === '#') return;
-    
-    const targetElement = document.querySelector(targetId);
-    if (targetElement) {
-      e.preventDefault();
-      lenis.scrollTo(targetElement, { offset: -72 }); // Navbar offset 적용
-      
-      // Close mobile menu if open
-      if (navToggle.classList.contains('open')) {
-        navToggle.classList.remove('open');
-        mobileMenu.classList.remove('open');
-        navToggle.setAttribute('aria-expanded', 'false');
-        mobileMenu.setAttribute('aria-hidden', 'true');
-        document.body.style.overflow = '';
-      }
-    }
-  });
-});
-
-// Navbar scroll
-const navbar = document.getElementById('navbar');
-window.addEventListener('scroll', () => {
-  navbar.classList.toggle('scrolled', window.scrollY > 40);
-}, { passive: true });
-
-// Mobile menu
-const navToggle = document.getElementById('navToggle');
-const mobileMenu = document.getElementById('mobileMenu');
-navToggle.addEventListener('click', () => {
-  const isOpen = navToggle.classList.toggle('open');
-  mobileMenu.classList.toggle('open', isOpen);
-  navToggle.setAttribute('aria-expanded', isOpen);
-  mobileMenu.setAttribute('aria-hidden', !isOpen);
-  document.body.style.overflow = isOpen ? 'hidden' : '';
-});
-// (앵커 링크 클릭 시 모바일 메뉴 닫기 로직은 상단 Lenis 앵커 핸들러로 통합됨)
-
-// Hero reveal on load
-window.addEventListener('load', () => {
-  document.querySelectorAll('[data-reveal]').forEach((el, i) => {
-    const delay = parseInt(el.getAttribute('data-reveal-delay') || 0) * 120;
-    setTimeout(() => el.classList.add('revealed'), 100 + delay);
-  });
-});
-
-// Scroll reveal
-const scrollObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('in-view');
-      scrollObserver.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0, rootMargin: '0px 0px -15% 0px' });
-
-document.querySelectorAll('[data-scroll-reveal]').forEach(el => scrollObserver.observe(el));
-
-// Vibe bars animation
-const vibeObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.querySelectorAll('.vibe-fill').forEach((fill, i) => {
-        setTimeout(() => fill.classList.add('animated'), i * 120);
-      });
-      vibeObserver.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.4 });
-
-document.querySelectorAll('.switch-vibe').forEach(el => vibeObserver.observe(el));
-
-// Divider marquee duplicate
-const divText = document.querySelector('.divider-text');
-if (divText) {
-  const content = divText.textContent;
-  divText.textContent = content + content;
-}
-
-// Contact form
-const contactForm = document.getElementById('contactForm');
-const contactSuccess = document.getElementById('contactSuccess');
-const submitBtn = document.getElementById('submit-btn');
-const emailInput = document.getElementById('email-input');
-const emailError = document.getElementById('email-error');
-
-function validateEmail(v) {
-  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
-}
-
-emailInput && emailInput.addEventListener('blur', () => {
-  if (emailInput.value && !validateEmail(emailInput.value)) {
-    emailError.textContent = '올바른 이메일 주소를 입력해 주세요.';
-    emailInput.setAttribute('aria-invalid', 'true');
-  } else {
-    emailError.textContent = '';
-    emailInput.removeAttribute('aria-invalid');
-  }
-});
-
-contactForm && contactForm.addEventListener('submit', async (e) => {
-  e.preventDefault();
-  
-  const email = emailInput.value.trim();
-  const name = document.getElementById('name-input').value.trim();
-  const phone = document.getElementById('phone-input').value.trim();
-  const zipcode = document.getElementById('zipcode-input').value.trim();
-  const address = document.getElementById('address-input').value.trim();
-  const quantity = document.getElementById('quantity-input').value.trim();
-  const privacy = document.getElementById('privacy-input').checked;
-
-  if (!email || !name || !phone || !zipcode || !address || !quantity || !privacy) {
-    alert('모든 필수 항목을 입력하고 개인정보 수집에 동의해주세요.');
-    return;
-  }
-
-  if (!validateEmail(email)) { 
-    emailError.textContent = '올바른 이메일 주소를 입력해 주세요.'; 
-    return; 
-  }
-  
-  emailError.textContent = '';
-  submitBtn.classList.add('btn--loading');
-  submitBtn.disabled = true;
-
-  const selectedInterests = document.querySelectorAll('input[name="interest"]:checked');
-  let interestTexts = [];
-  selectedInterests.forEach(checkbox => {
-    // 구글폼에 설정된 정확한 선택지 텍스트와 매칭해야 합니다
-    if (checkbox.value === 'jangsanbeom') interestTexts.push('장산범');
-    if (checkbox.value === 'omija') interestTexts.push('오미자');
-    if (checkbox.value === 'chamoe') interestTexts.push('참외');
-    if (checkbox.value === 'hongsi') interestTexts.push('홍시');
-    if (checkbox.value === 'hallabong') interestTexts.push('한라봉');
-    if (checkbox.value === 'hanbok') interestTexts.push('한복');
-  });
-
-  const formData = new FormData();
-  formData.append('entry.1683502974', name);
-  formData.append('entry.1030619106', phone);
-  formData.append('entry.1205993398', zipcode);
-  formData.append('entry.884922465', address);
-  formData.append('entry.1107055866', quantity); // 희망 수량
-  formData.append('entry.130393391', '개인정보 수집 및 이용에 동의합니다.'); // 체크박스 값
-  formData.append('emailAddress', email); // 구글폼 설정의 이메일 수집용 필드
-
-  interestTexts.forEach(interest => {
-    formData.append('entry.804199593', interest);
-  });
-
-  try {
-    // Google Forms 숨겨진 API 엔드포인트로 전송 (mode: no-cors 필수)
-    await fetch('https://docs.google.com/forms/d/e/1FAIpQLSdXOWt-LhjTYFEoP-vBFUVPQsPdMdBu6UrqLNrtcfEIMgFqmw/formResponse', {
-      method: 'POST',
-      mode: 'no-cors',
-      body: formData
+document.addEventListener('DOMContentLoaded', () => {
+    // Navbar Scroll Effect
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.add('scrolled');
+            navbar.classList.remove('scrolled'); // Force reflow
+            if(window.scrollY <= 50) {
+                 navbar.classList.remove('scrolled');
+            }
+        }
     });
-    
-    // no-cors 모드에서는 응답 성공 여부를 알 수 없으므로 성공으로 간주
-    contactForm.style.display = 'none';
-    contactSuccess.style.display = 'block';
-    contactSuccess.removeAttribute('aria-hidden');
-    contactSuccess.classList.add('visible');
-  } catch (error) {
-    console.error('Submission error:', error);
-    alert('제출 중 문제가 발생했습니다. 다시 시도해주세요.');
-  } finally {
-    submitBtn.classList.remove('btn--loading');
-    submitBtn.disabled = false;
-  }
+
+    // Reveal Animations using Intersection Observer
+    const revealElements = document.querySelectorAll('[data-reveal]');
+    const revealOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('revealed');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, revealOptions);
+
+    revealElements.forEach(el => revealObserver.observe(el));
+
+    // Interactive Aurora Background in Hero Section
+    const hero = document.getElementById('hero');
+    const auroraBlobs = document.querySelectorAll('.aurora-blob');
+
+    if (hero && auroraBlobs.length > 0) {
+        hero.addEventListener('mousemove', (e) => {
+            const { clientX, clientY } = e;
+            const xPos = (clientX / window.innerWidth - 0.5) * 20; // -10 to 10
+            const yPos = (clientY / window.innerHeight - 0.5) * 20;
+
+            auroraBlobs.forEach((blob, index) => {
+                // Different movement multipliers for parallax effect
+                const multX = (index % 2 === 0 ? 1 : -1) * (index + 1) * 0.5;
+                const multY = (index % 2 === 0 ? -1 : 1) * (index + 1) * 0.5;
+                
+                blob.style.transform = `translate(${xPos * multX}px, ${yPos * multY}px)`;
+            });
+        });
+    }
+
+    // Summer Switch (Miri) Ripple Effect on Hover/Click
+    const summerCard = document.querySelector('.summer-card');
+    const rippleContainer = document.querySelector('.ripple-container');
+
+    if (summerCard && rippleContainer) {
+        const createRipple = (e) => {
+            const circle = document.createElement('div');
+            const rect = summerCard.getBoundingClientRect();
+            
+            // Handle both mouse click and just center for hover if needed
+            // For now, let's just trigger it on click to match "역동적인 톡톡 튀는 트랜지션"
+            const x = e.clientX ? e.clientX - rect.left : rect.width / 2;
+            const y = e.clientY ? e.clientY - rect.top : rect.height / 2;
+
+            circle.style.width = circle.style.height = '100px';
+            circle.style.left = `${x - 50}px`;
+            circle.style.top = `${y - 50}px`;
+            circle.style.position = 'absolute';
+            circle.style.borderRadius = '50%';
+            circle.style.background = 'rgba(255, 255, 255, 0.4)';
+            circle.style.transform = 'scale(0)';
+            circle.style.animation = 'ripple 0.6s linear';
+            circle.style.pointerEvents = 'none';
+
+            rippleContainer.appendChild(circle);
+
+            setTimeout(() => {
+                circle.remove();
+            }, 600);
+        };
+
+        summerCard.addEventListener('click', createRipple);
+        // Also fire once on mouseenter for the "경쾌한" feel
+        summerCard.addEventListener('mouseenter', (e) => {
+             // Create a subtle ripple in the center
+             const circle = document.createElement('div');
+             circle.style.width = '100%';
+             circle.style.height = '100%';
+             circle.style.left = '0';
+             circle.style.top = '0';
+             circle.style.position = 'absolute';
+             circle.style.borderRadius = '24px';
+             circle.style.background = 'radial-gradient(circle, rgba(74, 144, 226, 0.4) 0%, transparent 70%)';
+             circle.style.animation = 'pulseRipple 1s ease-out';
+             circle.style.pointerEvents = 'none';
+             rippleContainer.appendChild(circle);
+             setTimeout(() => circle.remove(), 1000);
+        });
+    }
+
+    // Modal Open/Close Logic
+    const preorderModal = document.getElementById('preorderModal');
+    const openModalBtns = document.querySelectorAll('.open-modal-btn');
+    const closeModalBtn = document.getElementById('closeModal');
+
+    openModalBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            preorderModal.classList.add('active');
+        });
+    });
+
+    closeModalBtn.addEventListener('click', () => {
+        preorderModal.classList.remove('active');
+    });
+
+    // Close on overlay click
+    preorderModal.addEventListener('click', (e) => {
+        if (e.target === preorderModal) {
+            preorderModal.classList.remove('active');
+        }
+    });
+
+    // Close on OK button click (Coming Soon Message)
+    const modalOkBtn = document.getElementById('modalOkBtn');
+    if (modalOkBtn) {
+        modalOkBtn.addEventListener('click', () => {
+            preorderModal.classList.remove('active');
+        });
+    }
 });
+
+// Adding styles dynamically for the JS-created animations
+const style = document.createElement('style');
+style.textContent = `
+    @keyframes ripple {
+        to {
+            transform: scale(4);
+            opacity: 0;
+        }
+    }
+    @keyframes pulseRipple {
+        0% { transform: scale(0.9); opacity: 1; }
+        100% { transform: scale(1.1); opacity: 0; }
+    }
+`;
+document.head.appendChild(style);
